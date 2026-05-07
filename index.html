@@ -55,6 +55,12 @@
                     <button onclick="switchTab('new-outlet')" id="tab-new-outlet" class="px-4 py-2 rounded-md text-sm font-medium transition-all text-zinc-400 hover:text-white hover:bg-zinc-800 border border-transparent whitespace-nowrap">
                         <i class="fa-solid fa-store mr-2"></i>New Outlet Concept
                     </button>
+                    <button onclick="switchTab('scroll-layout')" id="tab-scroll-layout" class="px-4 py-2 rounded-md text-sm font-medium transition-all text-zinc-400 hover:text-white hover:bg-zinc-800 border border-transparent whitespace-nowrap">
+                        <i class="fa-solid fa-map mr-2"></i>Scroll Layout
+                    </button>
+                    <button onclick="switchTab('central-kitchen')" id="tab-central-kitchen" class="px-4 py-2 rounded-md text-sm font-medium transition-all text-zinc-400 hover:text-white hover:bg-zinc-800 border border-transparent whitespace-nowrap">
+                        <i class="fa-solid fa-utensils mr-2"></i>Central Kitchen Layout
+                    </button>
                     <button onclick="switchTab('utilities')" id="tab-utilities" class="px-4 py-2 rounded-md text-sm font-medium transition-all text-zinc-400 hover:text-white hover:bg-zinc-800 border border-transparent whitespace-nowrap">
                         <i class="fa-solid fa-bolt-lightning mr-2"></i>Utilities Analytics
                     </button>
@@ -190,6 +196,37 @@
                     </div>
                 </div>
 
+            </div>
+        </div>
+
+        <!-- ========================================== -->
+        <!-- TAB NEW: SCROLL LAYOUT -->
+        <!-- ========================================== -->
+        <div id="scroll-layout-view" class="fade-in hidden">
+            <div class="mb-6 flex justify-between items-end">
+                <div>
+                    <h2 class="text-2xl font-black text-white uppercase tracking-wide">Scroll Layout</h2>
+                    <p class="text-sm text-zinc-400 mt-1">Floor plan and structural design for the Scroll outlet.</p>
+                </div>
+            </div>
+            <div class="bg-[#121212] border border-[#27272a] rounded-xl shadow-lg p-6 mb-12 flex justify-center">
+                <img src="IMG/Scroll1.png" onerror="this.onerror=null; this.src='https://placehold.co/1200x800/121212/eab308?text=Scroll+Layout'" class="w-full h-auto max-h-screen object-contain rounded-xl border border-zinc-800 shadow-sm" alt="Scroll Layout">
+            </div>
+        </div>
+
+        <!-- ========================================== -->
+        <!-- TAB NEW: CENTRAL KITCHEN LAYOUT -->
+        <!-- ========================================== -->
+        <div id="central-kitchen-view" class="fade-in hidden">
+            <div class="mb-6 flex justify-between items-end">
+                <div>
+                    <h2 class="text-2xl font-black text-white uppercase tracking-wide">Central Kitchen Layout</h2>
+                    <p class="text-sm text-zinc-400 mt-1">Operational flow and floor plans for the Central Kitchen facility.</p>
+                </div>
+            </div>
+            <div class="bg-[#121212] border border-[#27272a] rounded-xl shadow-lg p-6 mb-12 flex flex-col gap-8 items-center">
+                <img src="IMG/CK1.png" onerror="this.onerror=null; this.src='https://placehold.co/1200x800/121212/10b981?text=CK+Layout+1'" class="w-full h-auto max-h-screen object-contain rounded-xl border border-zinc-800 shadow-sm" alt="Central Kitchen Layout 1">
+                <img src="IMG/CK2.png" onerror="this.onerror=null; this.src='https://placehold.co/1200x800/121212/10b981?text=CK+Layout+2'" class="w-full h-auto max-h-screen object-contain rounded-xl border border-zinc-800 shadow-sm" alt="Central Kitchen Layout 2">
             </div>
         </div>
 
@@ -546,8 +583,8 @@
         }
 
         function switchTab(tabId) {
-            const views = ['ops-maint-view', 'new-outlet-view', 'utilities-view', 'admin-comp-view', 'pest-control-view'];
-            const btns = ['tab-ops-maint', 'tab-new-outlet', 'tab-utilities', 'tab-admin-comp', 'tab-pest-control'];
+            const views = ['ops-maint-view', 'new-outlet-view', 'scroll-layout-view', 'central-kitchen-view', 'utilities-view', 'admin-comp-view', 'pest-control-view'];
+            const btns = ['tab-ops-maint', 'tab-new-outlet', 'tab-scroll-layout', 'tab-central-kitchen', 'tab-utilities', 'tab-admin-comp', 'tab-pest-control'];
 
             views.forEach(id => {
                 const el = document.getElementById(id);
