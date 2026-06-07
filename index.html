@@ -3,9 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BDM April Report</title>
+    <title>BDM May Report</title>
+    
+    <!-- External Dependencies: Tailwind, Chart.js, FontAwesome, Google Fonts -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
+        // Tailwind Configuration
         tailwind.config = {
             theme: {
                 extend: {
@@ -21,6 +24,7 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&display=swap');
         
+        /* Custom Animations and Scrollbar Hiding */
         .fade-in {
             animation: fadeIn 0.4s ease-in-out;
         }
@@ -43,7 +47,7 @@
                         <img src="IMG/PKLOGO.png" onerror="this.onerror=null; this.src='https://placehold.co/150x50/121212/ec4899?text=LOGO'" alt="Company Logo" class="h-14 w-auto object-contain rounded border border-zinc-800">
                     </div>
                     <div class="ml-4">
-                        <h1 class="text-xl md:text-2xl font-black bg-gradient-to-r from-orange-500 via-pink-500 to-blue-500 bg-clip-text text-transparent tracking-tight uppercase">BDM April Report</h1>
+                        <h1 class="text-xl md:text-2xl font-black bg-gradient-to-r from-orange-500 via-pink-500 to-blue-500 bg-clip-text text-transparent tracking-tight uppercase">BDM May Report</h1>
                         <p class="text-[10px] md:text-xs text-zinc-400 font-medium tracking-wider uppercase">Executive Consolidated Dashboard</p>
                     </div>
                 </div>
@@ -58,9 +62,6 @@
                     <button onclick="switchTab('scroll-layout')" id="tab-scroll-layout" class="px-4 py-2 rounded-md text-sm font-medium transition-all text-zinc-400 hover:text-white hover:bg-zinc-800 border border-transparent whitespace-nowrap">
                         <i class="fa-solid fa-map mr-2"></i>Scroll Layout
                     </button>
-                    <button onclick="switchTab('central-kitchen')" id="tab-central-kitchen" class="px-4 py-2 rounded-md text-sm font-medium transition-all text-zinc-400 hover:text-white hover:bg-zinc-800 border border-transparent whitespace-nowrap">
-                        <i class="fa-solid fa-utensils mr-2"></i>Central Kitchen Layout
-                    </button>
                     <button onclick="switchTab('utilities')" id="tab-utilities" class="px-4 py-2 rounded-md text-sm font-medium transition-all text-zinc-400 hover:text-white hover:bg-zinc-800 border border-transparent whitespace-nowrap">
                         <i class="fa-solid fa-bolt-lightning mr-2"></i>Utilities Analytics
                     </button>
@@ -69,6 +70,10 @@
                     </button>
                     <button onclick="switchTab('pest-control')" id="tab-pest-control" class="px-4 py-2 rounded-md text-sm font-medium transition-all text-zinc-400 hover:text-white hover:bg-zinc-800 border border-transparent whitespace-nowrap">
                         <i class="fa-solid fa-bug-slash mr-2"></i>Pest Control
+                    </button>
+                    <!-- Moved Central Kitchen Layout to last position per instructions -->
+                    <button onclick="switchTab('central-kitchen')" id="tab-central-kitchen" class="px-4 py-2 rounded-md text-sm font-medium transition-all text-zinc-400 hover:text-white hover:bg-zinc-800 border border-transparent whitespace-nowrap">
+                        <i class="fa-solid fa-utensils mr-2"></i>Central Kitchen Layout
                     </button>
                 </div>
             </div>
@@ -88,22 +93,22 @@
                     <p class="text-sm text-zinc-400 mt-1">Recent resolutions, cost optimizations, and upcoming plans.</p>
                 </div>
                 <div class="flex space-x-2 bg-zinc-900 border border-zinc-800 p-1.5 rounded-lg overflow-x-auto no-scrollbar shadow-inner">
-                    <button onclick="switchMaintTab('april')" id="maint-tab-april" class="px-4 py-1.5 rounded-md text-sm font-bold bg-gradient-to-r from-orange-500 via-pink-500 to-blue-500 text-white shadow-sm whitespace-nowrap">
-                        April Report
+                    <button onclick="switchMaintTab('may')" id="maint-tab-may" class="px-4 py-1.5 rounded-md text-sm font-bold bg-gradient-to-r from-orange-500 via-pink-500 to-blue-500 text-white shadow-sm whitespace-nowrap">
+                        May Report
                     </button>
-                    <button onclick="switchMaintTab('may')" id="maint-tab-may" class="px-4 py-1.5 rounded-md text-sm font-medium text-zinc-400 hover:text-white hover:bg-zinc-800 transition-colors whitespace-nowrap">
-                        May Plan
+                    <button onclick="switchMaintTab('june')" id="maint-tab-june" class="px-4 py-1.5 rounded-md text-sm font-medium text-zinc-400 hover:text-white hover:bg-zinc-800 transition-colors whitespace-nowrap">
+                        June Plan
                     </button>
                 </div>
             </div>
             
-            <!-- Sub-tab Container: April -->
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12 fade-in" id="maintenance-april-container">
+            <!-- Sub-tab Container: May Report -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12 fade-in" id="maintenance-may-container">
                 <!-- Populated by JS -->
             </div>
 
-            <!-- Sub-tab Container: May -->
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12 hidden fade-in" id="maintenance-may-container">
+            <!-- Sub-tab Container: June Plan -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12 hidden fade-in" id="maintenance-june-container">
                 <!-- Populated by JS -->
             </div>
         </div>
@@ -337,6 +342,27 @@
 
         const maintenanceData = [
             {
+                outlet: "Kalamassery Outlet",
+                icon: "fa-shop",
+                theme: { text: "text-emerald-400", bg: "bg-emerald-500/10 border border-emerald-500/20" },
+                categories: [
+                    {
+                        name: "General Maintenance & Repairs",
+                        icon: "fa-screwdriver-wrench",
+                        tasks: [
+                            "Shawaya machine wire and 3-pin top replaced.",
+                            "Bathroom exhaust fan replaced.",
+                            "Kitchen tap repaired.",
+                            "Kitchen lights replaced.",
+                            "Cash counter lights replaced.",
+                            "Staff room window lock fitted.",
+                            "Staff room closet seat cover repaired.",
+                            "Drainage cleaning completed for all outlets."
+                        ]
+                    }
+                ]
+            },
+            {
                 outlet: "Aluva Outlet",
                 icon: "fa-store",
                 theme: { text: "text-blue-400", bg: "bg-blue-500/10 border border-blue-500/20" },
@@ -345,79 +371,89 @@
                         name: "General Maintenance & Repairs",
                         icon: "fa-screwdriver-wrench",
                         tasks: [
-                            "Receiving area tap repairing",
-                            "Alfaham exhaust fan repairing",
-                            "Kitchen mixi repairing",
-                            "Alfaham Section air blower repairing",
-                            "3 nos mixi repairing",
-                            "Work At MD’s Home (Added as requested)"
+                            "Courtyard wash basin leakage fixed.",
+                            "Al-Faham section track light replaced.",
+                            "Firewood stone removed from Mandhi section.",
+                            "Firewood stone refitted.",
+                            "Drainage cleaning completed for all outlets."
                         ]
                     }
                 ]
             },
             {
-                outlet: "Infopark Outlet",
-                icon: "fa-building",
-                theme: { text: "text-teal-400", bg: "bg-teal-500/10 border border-teal-500/20" },
+                outlet: "Scroll Outlet",
+                icon: "fa-map",
+                theme: { text: "text-yellow-400", bg: "bg-yellow-500/10 border border-yellow-500/20" },
                 categories: [
                     {
-                        name: "Plumbing & Maintenance",
-                        icon: "fa-faucet-drip",
+                        name: "Site Updates",
+                        icon: "fa-hammer",
                         tasks: [
-                            "Pot washing tap repairing",
-                            "Juice section tap handle changed",
-                            "Tap handle changed at hand washing",
-                            "8 nos fan cleaning"
-                        ]
-                    }
-                ]
-            },
-            {
-                outlet: "Kalamassery Outlet",
-                icon: "fa-shop",
-                theme: { text: "text-emerald-400", bg: "bg-emerald-500/10 border border-emerald-500/20" },
-                categories: [
-                    {
-                        name: "Plumbing & Electrical",
-                        icon: "fa-plug",
-                        tasks: [
-                            "2nd floor plumbing work",
-                            "Generator AVR changed by Gen-technician",
-                            "Alfaham Exhaust fan motor changed with new motor",
-                            "Light changed at kitchen",
-                            "Fresh air fan fixing"
+                            "Work completed.",
+                            "Drainage cleaning completed for all outlets."
                         ]
                     }
                 ]
             }
         ];
 
-        const mayPlanData = [
+        const junePlanData = [
             {
-                outlet: "Operational Infrastructure",
-                icon: "fa-helmet-safety",
+                outlet: "Kalamassery",
+                icon: "fa-shop",
                 theme: { text: "text-emerald-400", bg: "bg-emerald-500/10 border border-emerald-500/20" },
                 categories: [
                     {
-                        name: "Site Development",
-                        icon: "fa-building",
+                        name: "Planned Maintenance",
+                        icon: "fa-calendar",
                         tasks: [
-                            "Scroll Outlet: Initiation of foundational and structural work.",
-                            "Central Kitchen & Corporate Office: Commencement of primary construction and interior development."
+                            "Borewell repairing.",
+                            "Leak proofing works.",
+                            "Water supply issue resolution."
                         ]
                     }
                 ]
             },
             {
-                outlet: "Edachira Site",
+                outlet: "Aluva",
+                icon: "fa-store",
+                theme: { text: "text-blue-400", bg: "bg-blue-500/10 border border-blue-500/20" },
+                categories: [
+                    {
+                        name: "Planned Maintenance",
+                        icon: "fa-calendar",
+                        tasks: [
+                            "Kitchen-side porotta section leak proofing.",
+                            "Parking area gate resetting."
+                        ]
+                    }
+                ]
+            },
+            {
+                outlet: "Edachira",
                 icon: "fa-bolt",
                 theme: { text: "text-orange-400", bg: "bg-orange-500/10 border border-orange-500/20" },
                 categories: [
                     {
-                        name: "Electrical & Utilities",
-                        icon: "fa-plug",
+                        name: "Planned Maintenance",
+                        icon: "fa-calendar",
                         tasks: [
-                            "Execution and installation of the Distribution Board (DB) box."
+                            "Dining area A/C light resetting."
+                        ]
+                    }
+                ]
+            },
+            {
+                outlet: "New Office & Central Kitchen",
+                icon: "fa-building",
+                theme: { text: "text-purple-400", bg: "bg-purple-500/10 border border-purple-500/20" },
+                categories: [
+                    {
+                        name: "Site Development",
+                        icon: "fa-helmet-safety",
+                        tasks: [
+                            "New office construction work started.",
+                            "New central kitchen work started."
                         ]
                     }
                 ]
@@ -426,7 +462,7 @@
 
         const ksebData = {
             "Aluva": [
-                { "name": "SHOP", "data": { "Feb-26": 149314, "Mar-26": 123036, "Apr-26": 138641 } },
+                { "name": "SHOP", "data": { "Mar-26": 138641, "Apr-26": 132268, "May-26": 110982 } },
                 { "name": "OFFICE", "data": { "Dec-25": 17835, "Feb-26": 18578, "Apr-26": 23721 } },
                 { "name": "MANAGERS ROOM", "data": { "Dec-25": 15900, "Feb-26": 27629, "Apr-26": 10976 } },
                 { "name": "HINDI STAFF ROOM", "data": { "Dec-25": 11422, "Feb-26": 9655, "Apr-26": 11571 } },
@@ -436,14 +472,15 @@
             "Kalamassery": [
                 { "name": "SHOP", "data": { "Feb-26": 75865, "Mar-26": 80946, "Apr-26": 83240 } },
                 { "name": "SHAWARMA SHOP", "data": { "Dec-25": 582, "Feb-26": 583, "Apr-26": 585 } },
-                { "name": "HINDI STAFF ROOM", "data": { "Dec-25": 5667, "Feb-26": 6089, "Apr-26": 15011 } },
-                { "name": "KLY OTHER BUILDING1", "data": { "Apr-26": 1501 } },
-                { "name": "KLY OTHER BUILDING2", "data": { "Apr-26": 1778 } },
-                { "name": "KLY OTHER BUILDING3", "data": { "Apr-26": 1730 } },
-                { "name": "KLY OTHER BUILDING4", "data": { "Apr-26": 191 } }
+                { "name": "MALAYALEE STAFF ROOM", "data": { "Oct-25": 2099, "Dec-25": 0, "Feb-26": 0 } },
+                { "name": "HINDI STAFF ROOM", "data": { "Oct-25": 5676, "Dec-25": 5667, "Feb-26": 6089 } },
+                { "name": "OTHER BUILDING 1", "data": { "Apr-26": 1501 } },
+                { "name": "OTHER BUILDING 2", "data": { "Apr-26": 1778 } },
+                { "name": "OTHER BUILDING 3", "data": { "Apr-26": 1730 } },
+                { "name": "OTHER BUILDING 4", "data": { "Apr-26": 191 } }
             ],
             "Kakkanad": [
-                { name: "SHOP", data: { "Jan-26": 6547, "Feb-26": 7146, "Apr-26": 6706 } },
+                { name: "SHOP", data: { "Feb-26": 7146, "Mar-26": 7410, "Apr-26": 6706 } },
                 { name: "STAFF ROOM", data: { "Dec-25": 2637, "Feb-26": 2413, "Apr-26": 1998 } }
             ],
             "Edachira": [
@@ -460,7 +497,7 @@
                 { name: "MALAYALEE STAFF ROOM", data: {"Dec-25": 11500, "Feb-26": 615, "Apr-26": 1862 } }
             ],
             "Kalamassery": [
-                { name: "SHOP", data: { "Nov-25": 3388, "Jan-26": 6754, "Mar-26": 14656 } },
+                { name: "SHOP", data: { "Jan-26": 6754, "Mar-26": 14656, "May-26": 704 } },
                 { name: "HINDI STAFF ROOM", data: { "Nov-25": 2943, "Jan-26": 3101, "Mar-26": 3025 } }
             ],
             "Kakkanad": [
@@ -481,7 +518,7 @@
             ],
             "Kakkanad": [
                 { type: "FSSAI", expiry: "02 May 2031" },
-                { type: "Municipal", expiry: "26 May 2026" }
+                { type: "Municipal", expiry: "26 May 2026", statusOverride: "Ongoing Issue" }
             ],
             "Kalamassery": [
                 { type: "FSSAI", expiry: "21 March 2031" },
@@ -497,56 +534,64 @@
             {
                 outlet: "Aluva",
                 completed: [
-                    { date: "12 April 2026", type: "Gel Application" },
-                    { date: "22 April 2026", type: "Spray Treatment" }
-                ],
-                planned: [
                     { date: "10 May 2026", type: "Spray Treatment" },
                     { date: "20 May 2026", type: "Gel Application" },
                     { date: "25 May 2026", type: "Extra service for Rat and pests" }
+                ],
+                planned: [
+                    { date: "12 June 2026", type: "Gel Application" },
+                    { date: "20 June 2026", type: "Spray Treatment" }
                 ]
             },
             {
                 outlet: "Kalamassery",
                 completed: [
-                    { date: "12 April 2026", type: "Gel Application" },
-                    { date: "22 April 2026", type: "Spray Treatment" }
-                ],
-                planned: [
                     { date: "10 May 2026", type: "Spray Treatment" },
                     { date: "20 May 2026", type: "Gel Application" },
                     { date: "25 May 2026", type: "Extra service for Rat and pests" }
+                ],
+                planned: [
+                    { date: "12 June 2026", type: "Gel Application" },
+                    { date: "20 June 2026", type: "Spray Treatment" }
                 ]
             },
             {
                 outlet: "Edachira",
                 completed: [
-                    { date: "10 April 2026", type: "Gel Application" },
-                    { date: "20 April 2026", type: "Spray Treatment" }
-                ],
-                planned: [
                     { date: "11 May 2026", type: "Spray Treatment" },
                     { date: "21 May 2026", type: "Gel Application" },
                     { date: "25 May 2026", type: "Extra service for Rat and pests" }
+                ],
+                planned: [
+                    { date: "13 June 2026", type: "Gel Application" },
+                    { date: "21 June 2026", type: "Spray Treatment" }
                 ]
             },
             {
                 outlet: "Kakkanad",
                 completed: [
-                    { date: "10 April 2026", type: "Gel Application" },
-                    { date: "20 April 2026", type: "Spray Treatment" }
-                ],
-                planned: [
                     { date: "11 May 2026", type: "Spray Treatment" },
                     { date: "21 May 2026", type: "Gel Application" },
                     { date: "25 May 2026", type: "Extra service for Rat and pests" }
+                ],
+                planned: [
+                    { date: "13 June 2026", type: "Gel Application" },
+                    { date: "21 June 2026", type: "Spray Treatment" }
+                ]
+            },
+            {
+                outlet: "Scroll",
+                completed: [],
+                planned: [
+                    { date: "13 June 2026", type: "Gel Application" },
+                    { date: "21 June 2026", type: "Spray Treatment" }
                 ]
             }
         ];
 
         const fleetData = [
             { vehicle: "Ape", expiry: "13 June 2026", icon: "fa-truck-pickup" },
-            { vehicle: "Thar", expiry: "06 June 2026", icon: "fa-truck-monster" },
+            { vehicle: "Thar", expiry: "06 June 2027", icon: "fa-truck-monster" },
             { vehicle: "Activa", expiry: "27 November 2026", icon: "fa-motorcycle" },
             { vehicle: "Ola (Electric)", expiry: "05 October 2028", icon: "fa-bolt" },
             { vehicle: "Intra", expiry: "11 August 2026", icon: "fa-truck" },
@@ -554,18 +599,17 @@
         ];
 
         const adminUpdatesData = [
-            
             {
                 title: "Facility Acquisition",
-                status: "Pending Confirmation",
-                description: "Central Kitchen and Office locations identified. Final confirmation pending from property owners.",
+                status: "Completed",
+                description: "Central Kitchen and Office work has commenced. Site confirmation completed and project execution started.",
                 icon: "fa-building-circle-check",
-                color: "blue",
-                badgeIcon: "fa-clock"
+                color: "green",
+                badgeIcon: "fa-circle-check"
             }
         ];
 
-        // Store chart instances
+        // Store chart instances to manage destruction/re-rendering
         let chartInstances = [];
         let waterChartInstances = [];
         let utilitiesInitialized = false;
@@ -575,8 +619,9 @@
         // ==========================================
 
         function init() {
-            renderMaintenanceCards(maintenanceData, 'maintenance-april-container');
-            renderMaintenanceCards(mayPlanData, 'maintenance-may-container');
+            // Render basic tabs on initial load
+            renderMaintenanceCards(maintenanceData, 'maintenance-may-container');
+            renderMaintenanceCards(junePlanData, 'maintenance-june-container');
             renderPestControl();
             renderCompliance(); 
             renderAdminLogistics();
@@ -586,6 +631,7 @@
             const views = ['ops-maint-view', 'new-outlet-view', 'scroll-layout-view', 'central-kitchen-view', 'utilities-view', 'admin-comp-view', 'pest-control-view'];
             const btns = ['tab-ops-maint', 'tab-new-outlet', 'tab-scroll-layout', 'tab-central-kitchen', 'tab-utilities', 'tab-admin-comp', 'tab-pest-control'];
 
+            // Hide all views and reset button classes
             views.forEach(id => {
                 const el = document.getElementById(id);
                 if (el) el.classList.add('hidden');
@@ -595,6 +641,7 @@
                 if (el) el.className = "px-4 py-2 rounded-md text-sm font-medium transition-all text-zinc-400 hover:text-white hover:bg-zinc-800 border border-transparent whitespace-nowrap";
             });
 
+            // Show active view and highlight active button
             const activeView = document.getElementById(tabId + '-view');
             const activeBtn = document.getElementById('tab-' + tabId);
             
@@ -612,24 +659,24 @@
 
         // Sub-Tab Switcher for Operations & Maintenance
         function switchMaintTab(tab) {
-            const aprilContainer = document.getElementById('maintenance-april-container');
             const mayContainer = document.getElementById('maintenance-may-container');
-            const aprilBtn = document.getElementById('maint-tab-april');
+            const juneContainer = document.getElementById('maintenance-june-container');
             const mayBtn = document.getElementById('maint-tab-may');
+            const juneBtn = document.getElementById('maint-tab-june');
 
             const activeClass = "px-4 py-1.5 rounded-md text-sm font-bold bg-gradient-to-r from-orange-500 via-pink-500 to-blue-500 text-white shadow-sm whitespace-nowrap";
             const inactiveClass = "px-4 py-1.5 rounded-md text-sm font-medium text-zinc-400 hover:text-white hover:bg-zinc-800 transition-colors whitespace-nowrap";
 
-            if (tab === 'april') {
-                aprilContainer.classList.remove('hidden');
-                mayContainer.classList.add('hidden');
-                aprilBtn.className = activeClass;
-                mayBtn.className = inactiveClass;
-            } else {
-                aprilContainer.classList.add('hidden');
+            if (tab === 'may') {
                 mayContainer.classList.remove('hidden');
-                aprilBtn.className = inactiveClass;
+                juneContainer.classList.add('hidden');
                 mayBtn.className = activeClass;
+                juneBtn.className = inactiveClass;
+            } else {
+                mayContainer.classList.add('hidden');
+                juneContainer.classList.remove('hidden');
+                mayBtn.className = inactiveClass;
+                juneBtn.className = activeClass;
             }
         }
 
@@ -697,6 +744,17 @@
                     </div>
                 `).join('');
 
+                let completedSection = completedHTML ? `
+                    <div class="mb-5">
+                        <h4 class="text-xs font-bold text-zinc-500 uppercase tracking-wider mb-3 flex items-center justify-between">
+                            <span>May 2026</span>
+                            <span class="bg-green-500/10 text-green-400 text-[10px] px-2 py-0.5 rounded border border-green-500/20">Completed</span>
+                        </h4>
+                        <div class="bg-zinc-900/50 rounded-lg p-3 border border-zinc-800">
+                            ${completedHTML}
+                        </div>
+                    </div>` : '';
+
                 const cardHTML = `
                     <div class="bg-[#121212] border border-[#27272a] rounded-xl shadow-lg overflow-hidden hover:shadow-pink-500/5 transition-all">
                         <div class="bg-zinc-900/50 border-b border-zinc-800 px-6 py-4 flex items-center justify-between">
@@ -708,18 +766,10 @@
                             </div>
                         </div>
                         <div class="p-6">
-                            <div class="mb-5">
-                                <h4 class="text-xs font-bold text-zinc-500 uppercase tracking-wider mb-3 flex items-center justify-between">
-                                    <span>April 2026</span>
-                                    <span class="bg-green-500/10 text-green-400 text-[10px] px-2 py-0.5 rounded border border-green-500/20">Completed</span>
-                                </h4>
-                                <div class="bg-zinc-900/50 rounded-lg p-3 border border-zinc-800">
-                                    ${completedHTML}
-                                </div>
-                            </div>
+                            ${completedSection}
                             <div>
                                 <h4 class="text-xs font-bold text-zinc-500 uppercase tracking-wider mb-3 flex items-center justify-between">
-                                    <span>May 2026</span>
+                                    <span>June 2026</span>
                                     <span class="bg-blue-500/10 text-blue-400 text-[10px] px-2 py-0.5 rounded border border-blue-500/20">Plan</span>
                                 </h4>
                                 <div class="bg-zinc-900 rounded-lg p-3 border border-zinc-700 shadow-inner">
@@ -763,6 +813,7 @@
         function renderKSEBCharts(outletName) {
             const container = document.getElementById('kseb-charts-container');
             container.innerHTML = '';
+            // Destroy existing charts to prevent memory leaks and overlapping renders
             chartInstances.forEach(chart => chart.destroy());
             chartInstances = [];
 
@@ -771,12 +822,13 @@
                 const labels = Object.keys(area.data);
                 const dataPoints = Object.values(area.data);
                 
+                // Calculate month-over-month trend
                 let trendHTML = '';
                 if (dataPoints.length >= 2) {
                     const latest = dataPoints[dataPoints.length - 1];
                     const previous = dataPoints[dataPoints.length - 2];
                     const diff = latest - previous;
-                    const percent = ((diff / previous) * 100).toFixed(1);
+                    const percent = previous > 0 ? ((diff / previous) * 100).toFixed(1) : (diff > 0 ? "100" : "0");
                     
                     if (diff > 0) {
                         if(percent > 50) {
@@ -808,6 +860,7 @@
                 container.innerHTML += cardHTML;
             });
 
+            // Initialize charts via setTimeout to ensure canvas exists in DOM
             setTimeout(() => {
                 areas.forEach((area, index) => {
                     const canvasId = `chart-${outletName}-${index}`;
@@ -823,6 +876,7 @@
                     gradient.addColorStop(0.5, '#ec4899'); // Pink
                     gradient.addColorStop(1, '#3b82f6'); // Blue
 
+                    // Highlight the last bar with gradient
                     const bgColors = dataPoints.map((_, i) => i === dataPoints.length - 1 ? gradient : '#27272a');
 
                     const chart = new Chart(ctx, {
@@ -973,7 +1027,11 @@
                     let iconClass = 'fa-file-signature text-zinc-500';
                     let rowBg = 'bg-zinc-900/50 border border-zinc-800';
                     
-                    if (diffDays < 0) {
+                    if (record.statusOverride) {
+                        statusBadge = `<span class="bg-orange-500/10 text-orange-400 text-xs font-semibold px-2.5 py-1 rounded-full border border-orange-500/20"><i class="fa-solid fa-triangle-exclamation mr-1"></i>${record.statusOverride}</span>`;
+                        iconClass = 'fa-file-circle-exclamation text-orange-500';
+                        rowBg = 'bg-orange-500/5 border border-orange-500/20';
+                    } else if (diffDays < 0) {
                         statusBadge = `<span class="bg-red-500/10 text-red-400 text-xs font-semibold px-2.5 py-1 rounded-full border border-red-500/20"><i class="fa-solid fa-circle-xmark mr-1"></i>Expired</span>`;
                         iconClass = 'fa-file-circle-xmark text-red-500';
                         rowBg = 'bg-red-500/5 border border-red-500/20';
