@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BDM May Report</title>
+    <title>BDM June Report</title>
     
     <!-- External Dependencies: Tailwind, Chart.js, FontAwesome, Google Fonts -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -47,7 +47,7 @@
                         <img src="IMG/PKLOGO.png" onerror="this.onerror=null; this.src='https://placehold.co/150x50/121212/ec4899?text=LOGO'" alt="Company Logo" class="h-14 w-auto object-contain rounded border border-zinc-800">
                     </div>
                     <div class="ml-4">
-                        <h1 class="text-xl md:text-2xl font-black bg-gradient-to-r from-orange-500 via-pink-500 to-blue-500 bg-clip-text text-transparent tracking-tight uppercase">BDM May Report</h1>
+                        <h1 class="text-xl md:text-2xl font-black bg-gradient-to-r from-orange-500 via-pink-500 to-blue-500 bg-clip-text text-transparent tracking-tight uppercase">BDM June Report</h1>
                         <p class="text-[10px] md:text-xs text-zinc-400 font-medium tracking-wider uppercase">Executive Consolidated Dashboard</p>
                     </div>
                 </div>
@@ -55,12 +55,6 @@
                 <div class="flex items-center space-x-2 overflow-x-auto no-scrollbar py-2 w-full md:w-auto">
                     <button onclick="switchTab('ops-maint')" id="tab-ops-maint" class="px-4 py-2 rounded-md text-sm font-bold transition-all bg-gradient-to-r from-orange-500 via-pink-500 to-blue-500 text-white shadow-lg shadow-pink-500/20 border border-transparent whitespace-nowrap">
                         <i class="fa-solid fa-screwdriver-wrench mr-2"></i>Operations & Maint.
-                    </button>
-                    <button onclick="switchTab('new-outlet')" id="tab-new-outlet" class="px-4 py-2 rounded-md text-sm font-medium transition-all text-zinc-400 hover:text-white hover:bg-zinc-800 border border-transparent whitespace-nowrap">
-                        <i class="fa-solid fa-store mr-2"></i>New Outlet Concept
-                    </button>
-                    <button onclick="switchTab('scroll-layout')" id="tab-scroll-layout" class="px-4 py-2 rounded-md text-sm font-medium transition-all text-zinc-400 hover:text-white hover:bg-zinc-800 border border-transparent whitespace-nowrap">
-                        <i class="fa-solid fa-map mr-2"></i>Scroll Layout
                     </button>
                     <button onclick="switchTab('utilities')" id="tab-utilities" class="px-4 py-2 rounded-md text-sm font-medium transition-all text-zinc-400 hover:text-white hover:bg-zinc-800 border border-transparent whitespace-nowrap">
                         <i class="fa-solid fa-bolt-lightning mr-2"></i>Utilities Analytics
@@ -71,9 +65,8 @@
                     <button onclick="switchTab('pest-control')" id="tab-pest-control" class="px-4 py-2 rounded-md text-sm font-medium transition-all text-zinc-400 hover:text-white hover:bg-zinc-800 border border-transparent whitespace-nowrap">
                         <i class="fa-solid fa-bug-slash mr-2"></i>Pest Control
                     </button>
-                    <!-- Moved Central Kitchen Layout to last position per instructions -->
-                    <button onclick="switchTab('central-kitchen')" id="tab-central-kitchen" class="px-4 py-2 rounded-md text-sm font-medium transition-all text-zinc-400 hover:text-white hover:bg-zinc-800 border border-transparent whitespace-nowrap">
-                        <i class="fa-solid fa-utensils mr-2"></i>Central Kitchen Layout
+                    <button onclick="switchTab('outlet-visit')" id="tab-outlet-visit" class="px-4 py-2 rounded-md text-sm font-medium transition-all text-zinc-400 hover:text-white hover:bg-zinc-800 border border-transparent whitespace-nowrap">
+                        <i class="fa-solid fa-clipboard-list mr-2"></i>Outlet Visit Report
                     </button>
                 </div>
             </div>
@@ -93,195 +86,22 @@
                     <p class="text-sm text-zinc-400 mt-1">Recent resolutions, cost optimizations, and upcoming plans.</p>
                 </div>
                 <div class="flex space-x-2 bg-zinc-900 border border-zinc-800 p-1.5 rounded-lg overflow-x-auto no-scrollbar shadow-inner">
-                    <button onclick="switchMaintTab('may')" id="maint-tab-may" class="px-4 py-1.5 rounded-md text-sm font-bold bg-gradient-to-r from-orange-500 via-pink-500 to-blue-500 text-white shadow-sm whitespace-nowrap">
-                        May Report
+                    <button onclick="switchMaintTab('june')" id="maint-tab-june" class="px-4 py-1.5 rounded-md text-sm font-bold bg-gradient-to-r from-orange-500 via-pink-500 to-blue-500 text-white shadow-sm whitespace-nowrap">
+                        June Report
                     </button>
-                    <button onclick="switchMaintTab('june')" id="maint-tab-june" class="px-4 py-1.5 rounded-md text-sm font-medium text-zinc-400 hover:text-white hover:bg-zinc-800 transition-colors whitespace-nowrap">
-                        June Plan
+                    <button onclick="switchMaintTab('july')" id="maint-tab-july" class="px-4 py-1.5 rounded-md text-sm font-medium text-zinc-400 hover:text-white hover:bg-zinc-800 transition-colors whitespace-nowrap">
+                        July Plan
                     </button>
                 </div>
             </div>
             
-            <!-- Sub-tab Container: May Report -->
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12 fade-in" id="maintenance-may-container">
+            <!-- Sub-tab Container: June Report -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12 fade-in" id="maintenance-june-container">
                 <!-- Populated by JS -->
             </div>
 
-            <!-- Sub-tab Container: June Plan -->
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12 hidden fade-in" id="maintenance-june-container">
-                <!-- Populated by JS -->
-            </div>
-        </div>
-
-        <!-- ========================================== -->
-        <!-- TAB NEW: NEW OUTLET CONCEPT -->
-        <!-- ========================================== -->
-        <div id="new-outlet-view" class="fade-in hidden">
-            <div class="mb-6 flex justify-between items-end">
-                <div>
-                    <h2 class="text-2xl font-black text-white uppercase tracking-wide">New Outlet Concept</h2>
-                    <p class="text-sm text-zinc-400 mt-1">Container layout proposals and IT structural plans for upcoming outlets.</p>
-                </div>
-            </div>
-
-            <div class="grid grid-cols-1 gap-6 mb-12">
-                
-                <!-- Vendor 4: Tradespace Container Work -->
-                <div class="bg-[#121212] border border-[#27272a] rounded-xl shadow-lg overflow-hidden hover:shadow-pink-500/5 transition-all flex flex-col">
-                    <div class="bg-zinc-900/50 border-b border-zinc-800 px-6 py-4 flex items-center">
-                        <div class="bg-pink-500/10 text-pink-400 p-2.5 rounded-lg mr-4 border border-pink-500/20">
-                            <i class="fa-solid fa-cubes text-xl"></i>
-                        </div>
-                        <h3 class="text-lg font-bold text-white uppercase tracking-wider">4. Tradespace Container</h3>
-                    </div>
-                    
-                    <div class="p-6 flex-grow flex flex-col space-y-6">
-                        <!-- Option A -->
-                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 items-start">
-                            <div>
-                                <h4 class="text-sm font-bold text-zinc-200 mb-3 border-b border-zinc-800 pb-2 uppercase tracking-wide text-pink-400">Option A: Double Decker Setup</h4>
-                                <ul class="text-sm text-zinc-400 space-y-1.5 mb-3">
-                                    <li><i class="fa-solid fa-ruler-combined text-zinc-500 w-4 text-center mr-1.5"></i> <span class="font-semibold text-zinc-300">Size:</span> 20ft x 20ft (Total 600 sqft)</li>
-                                    <li><i class="fa-solid fa-building text-zinc-500 w-4 text-center mr-1.5"></i> <span class="font-semibold text-zinc-300">Structure:</span> ₹6,30,000</li>
-                                    <li><i class="fa-solid fa-border-top-left text-zinc-500 w-4 text-center mr-1.5"></i> <span class="font-semibold text-zinc-300">Balcony:</span> ₹1,40,000</li>
-                                    <li><i class="fa-solid fa-stairs text-zinc-500 w-4 text-center mr-1.5"></i> <span class="font-semibold text-zinc-300">Staircase:</span> ₹35,000</li>
-                                    <li><i class="fa-solid fa-link text-zinc-500 w-4 text-center mr-1.5"></i> <span class="font-semibold text-zinc-300">Joining:</span> ₹30,000</li>
-                                </ul>
-                                <div class="bg-pink-500/5 p-2.5 rounded-lg border border-pink-500/10 mb-2">
-                                    <p class="text-sm font-bold text-zinc-200"><span class="text-zinc-400 font-normal">Basic Cost:</span> ₹8,35,000 + GST</p>
-                                </div>
-                                <p class="text-xs text-zinc-500 italic">* Internal partitions, toilets, and kitchen are extra.</p>
-                            </div>
-                            <div>
-                                <img src="IMG/WW1.jpeg" onerror="this.onerror=null; this.src='https://placehold.co/400x300/121212/f472b6?text=Option+A'" class="w-full h-full min-h-[200px] object-cover rounded-xl border border-zinc-800 shadow-sm hover:border-pink-500/30 transition-all" alt="Tradespace Option A">
-                            </div>
-                        </div>
-
-                        <hr class="border-zinc-800">
-
-                        <!-- Option B -->
-                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 items-start">
-                            <div>
-                                <h4 class="text-sm font-bold text-zinc-200 mb-3 border-b border-zinc-800 pb-2 uppercase tracking-wide text-blue-400">Option B: Flexible Space</h4>
-                                <p class="text-sm text-zinc-400 mb-2 font-semibold">Dimensions Options:</p>
-                                <ul class="text-sm text-zinc-400 space-y-2 mb-3">
-                                    <li class="bg-zinc-900/50 p-2 rounded border border-zinc-800"><i class="fa-solid fa-maximize text-zinc-500 mr-2"></i> 20ft (L) x 10ft (W) x 8.5ft (H)</li>
-                                    <li class="bg-zinc-900/50 p-2 rounded border border-zinc-800"><i class="fa-solid fa-minimize text-zinc-500 mr-2"></i> 15ft (L) x 10ft (W) x 8.5ft (H)</li>
-                                </ul>
-                                <p class="text-xs text-zinc-500 italic">* Note: Cost reduces for the smaller size.</p>
-                            </div>
-                            <div>
-                                <img src="IMG/WW2.jpeg" onerror="this.onerror=null; this.src='https://placehold.co/400x300/121212/60a5fa?text=Option+B'" class="w-full h-full min-h-[160px] object-cover rounded-xl border border-zinc-800 shadow-sm hover:border-blue-500/30 transition-all" alt="Tradespace Option B">
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-
-                <!-- IT Plan & Floor Layouts -->
-                <div class="bg-[#121212] border border-[#27272a] rounded-xl shadow-lg overflow-hidden hover:shadow-pink-500/5 transition-all flex flex-col">
-                    <div class="bg-zinc-900/50 border-b border-zinc-800 px-6 py-4 flex items-center">
-                        <div class="bg-blue-500/10 text-blue-400 p-2.5 rounded-lg mr-4 border border-blue-500/20">
-                            <i class="fa-solid fa-network-wired text-xl"></i>
-                        </div>
-                        <h3 class="text-lg font-bold text-white uppercase tracking-wider">IT Plan & Floor Layouts</h3>
-                    </div>
-                    
-                    <div class="p-6 flex-grow flex flex-col space-y-6">
-                        <p class="text-sm text-zinc-400">Proposed IT Infrastructure, camera mapping, and networking schematics for the new outlet.</p>
-                        
-                        <!-- 5 Image Gallery (Full Size Stack for Floor Plans) -->
-                        <div class="flex flex-col gap-8 items-center w-full">
-                            <img src="IMG/CO1.png" onerror="this.onerror=null; this.src='https://placehold.co/1200x800/121212/3b82f6?text=Floor+Plan+1'" class="w-full h-auto object-contain rounded-xl border border-zinc-800 shadow-sm" alt="IT Plan CO1">
-                            <img src="IMG/CO2.png" onerror="this.onerror=null; this.src='https://placehold.co/1200x800/121212/3b82f6?text=Floor+Plan+2'" class="w-full h-auto object-contain rounded-xl border border-zinc-800 shadow-sm" alt="IT Plan CO2">
-                            <img src="IMG/CO3.png" onerror="this.onerror=null; this.src='https://placehold.co/1200x800/121212/3b82f6?text=Floor+Plan+3'" class="w-full h-auto object-contain rounded-xl border border-zinc-800 shadow-sm" alt="IT Plan CO3">
-                            <img src="IMG/CO4.png" onerror="this.onerror=null; this.src='https://placehold.co/1200x800/121212/3b82f6?text=Floor+Plan+4'" class="w-full h-auto object-contain rounded-xl border border-zinc-800 shadow-sm" alt="IT Plan CO4">
-                            <img src="IMG/CO5.png" onerror="this.onerror=null; this.src='https://placehold.co/1200x800/121212/3b82f6?text=Floor+Plan+5'" class="w-full h-auto object-contain rounded-xl border border-zinc-800 shadow-sm" alt="IT Plan CO5">
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-
-        <!-- ========================================== -->
-        <!-- TAB NEW: SCROLL OUTLET -->
-        <!-- ========================================== -->
-        <div id="scroll-layout-view" class="fade-in hidden">
-            <div class="mb-6 flex justify-between items-end">
-                <div>
-                    <h2 class="text-2xl font-black text-white uppercase tracking-wide">Scroll Outlet</h2>
-                    <p class="text-sm text-zinc-400 mt-1">Scroll Outlet Opened Successfully</p>
-                </div>
-            </div>
-        
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-            
-                <!-- Budget -->
-                <div class="bg-[#121212] border border-[#27272a] rounded-xl p-6 shadow-lg">
-                    <p class="text-sm text-zinc-400 uppercase tracking-wider">Budget</p>
-                    <h3 class="text-3xl font-black text-yellow-400 mt-2">
-                        ₹15,00,000
-                    </h3>
-                </div>
-            
-                <!-- Actual -->
-                <div class="bg-[#121212] border border-[#27272a] rounded-xl p-6 shadow-lg">
-                    <p class="text-sm text-zinc-400 uppercase tracking-wider">Actual</p>
-                    <h3 class="text-3xl font-black text-green-400 mt-2">
-                        ₹18,16,363
-                    </h3>
-                </div>
-            
-                <!-- Advance -->
-                <div class="bg-[#121212] border border-[#27272a] rounded-xl p-6 shadow-lg">
-                    <p class="text-sm text-zinc-400 uppercase tracking-wider">Advance</p>
-                    <h3 class="text-3xl font-black text-blue-400 mt-2">
-                        ₹3,00,000
-                    </h3>
-                    <p class="text-xs text-zinc-500 mt-2">
-                        Included within actual expenses
-                    </p>
-                </div>
-            
-            </div>
-        
-            <!-- Layout Image -->
-            <div class="bg-[#121212] border border-[#27272a] rounded-xl shadow-lg p-6 flex justify-center">
-                <img src="IMG/Scroll1.png"
-                    onerror="this.onerror=null; this.src='https://placehold.co/1200x800/121212/eab308?text=Scroll+Layout'"
-                    class="w-full h-auto max-h-screen object-contain rounded-xl border border-zinc-800 shadow-sm"
-                    alt="Scroll Outlet Layout">
-            </div>
-        </div>
-
-        <!-- ========================================== -->
-        <!-- TAB NEW: CENTRAL KITCHEN LAYOUT -->
-        <!-- ========================================== -->
-        <div id="central-kitchen-view" class="fade-in hidden">
-            <div class="mb-6 flex justify-between items-end">
-                <div>
-                    <h2 class="text-2xl font-black text-white uppercase tracking-wide">Central Kitchen Layout</h2>
-                    <p class="text-sm text-zinc-400 mt-1">Operational flow and floor plans for the Central Kitchen facility.</p>
-                </div>
-            </div>
-            <div class="bg-[#121212] border border-[#27272a] rounded-xl shadow-lg p-6 mb-12 flex flex-col gap-8 items-center">
-                <img src="IMG/CK1.png" onerror="this.onerror=null; this.src='https://placehold.co/1200x800/121212/10b981?text=CK+Layout+1'" class="w-full h-auto max-h-screen object-contain rounded-xl border border-zinc-800 shadow-sm" alt="Central Kitchen Layout 1">
-                <img src="IMG/CK2.png" onerror="this.onerror=null; this.src='https://placehold.co/1200x800/121212/10b981?text=CK+Layout+2'" class="w-full h-auto max-h-screen object-contain rounded-xl border border-zinc-800 shadow-sm" alt="Central Kitchen Layout 2">
-            </div>
-        </div>
-
-        <!-- ========================================== -->
-        <!-- TAB 4: PEST CONTROL -->
-        <!-- ========================================== -->
-        <div id="pest-control-view" class="fade-in hidden">
-            <div class="mb-6 flex justify-between items-end">
-                <div>
-                    <h2 class="text-2xl font-black text-white uppercase tracking-wide">Pest Control Schedule</h2>
-                    <p class="text-sm text-zinc-400 mt-1">Completed treatments and upcoming planned schedules across all outlets.</p>
-                </div>
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12" id="pest-control-container">
+            <!-- Sub-tab Container: July Plan -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12 hidden fade-in" id="maintenance-july-container">
                 <!-- Populated by JS -->
             </div>
         </div>
@@ -369,6 +189,36 @@
 
         </div>
 
+        <!-- ========================================== -->
+        <!-- TAB 4: PEST CONTROL -->
+        <!-- ========================================== -->
+        <div id="pest-control-view" class="fade-in hidden">
+            <div class="mb-6 flex justify-between items-end">
+                <div>
+                    <h2 class="text-2xl font-black text-white uppercase tracking-wide">Pest Control Schedule</h2>
+                    <p class="text-sm text-zinc-400 mt-1">Completed treatments and upcoming planned schedules across all outlets.</p>
+                </div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12" id="pest-control-container">
+                <!-- Populated by JS -->
+            </div>
+        </div>
+
+        <!-- ========================================== -->
+        <!-- TAB 5: OUTLET VISIT REPORT -->
+        <!-- ========================================== -->
+        <div id="outlet-visit-view" class="fade-in hidden">
+            <div class="mb-6 flex justify-between items-end">
+                <div>
+                    <h2 class="text-2xl font-black text-white uppercase tracking-wide">Outlet Visit Report</h2>
+                    <p class="text-sm text-zinc-400 mt-1">Key observations and required improvements from recent site evaluations.</p>
+                </div>
+            </div>
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-12" id="outlet-visit-container">
+                <!-- Populated by JS -->
+            </div>
+        </div>
+
     </main>
 
     <script>
@@ -378,22 +228,15 @@
 
         const maintenanceData = [
             {
-                outlet: "Kalamassery Outlet",
-                icon: "fa-shop",
-                theme: { text: "text-emerald-400", bg: "bg-emerald-500/10 border border-emerald-500/20" },
+                outlet: "Scroll Outlet",
+                icon: "fa-map",
+                theme: { text: "text-yellow-400", bg: "bg-yellow-500/10 border border-yellow-500/20" },
                 categories: [
                     {
                         name: "General Maintenance & Repairs",
                         icon: "fa-screwdriver-wrench",
                         tasks: [
-                            "Shawaya machine wire and 3-pin top replaced.",
-                            "Bathroom exhaust fan replaced.",
-                            "Kitchen tap repaired.",
-                            "Kitchen lights replaced.",
-                            "Cash counter lights replaced.",
-                            "Staff room window lock fitted.",
-                            "Staff room closet seat cover repaired.",
-                            "Drainage cleaning completed for all outlets."
+                            "Television installation completed."
                         ]
                     }
                 ]
@@ -407,35 +250,71 @@
                         name: "General Maintenance & Repairs",
                         icon: "fa-screwdriver-wrench",
                         tasks: [
-                            "Courtyard wash basin leakage fixed.",
-                            "Al-Faham section track light replaced.",
-                            "Firewood stone removed from Mandhi section.",
-                            "Firewood stone refitted.",
-                            "Drainage cleaning completed for all outlets."
+                            "Replaced the 2x2 light guard in the butchery section.",
+                            "Resolved DB (Distribution Board) tripping by removing damaged wiring.",
+                            "Repaired courtyard lighting.",
+                            "Replaced the LED driver for the parking exit signboard and front-side tree lighting.",
+                            "Repaired the Alfaham section track light.",
+                            "Replaced the butchery connection hose.",
+                            "Cleared and rectified the drainage blockage in the glass washing area.",
+                            "Refixed the A/C bathroom closet and replaced the health faucet."
                         ]
                     }
                 ]
             },
             {
-                outlet: "Scroll Outlet",
-                icon: "fa-map",
-                theme: { text: "text-yellow-400", bg: "bg-yellow-500/10 border border-yellow-500/20" },
+                outlet: "Infopark Outlet",
+                icon: "fa-building",
+                theme: { text: "text-purple-400", bg: "bg-purple-500/10 border border-purple-500/20" },
                 categories: [
                     {
-                        name: "Site Updates",
-                        icon: "fa-hammer",
+                        name: "General Maintenance & Repairs",
+                        icon: "fa-screwdriver-wrench",
                         tasks: [
-                            "Work completed.",
-                            "Drainage cleaning completed for all outlets."
+                            "Resolved DB tripping by disconnecting damaged wiring.",
+                            "Completed additional DB tripping rectification works.",
+                            "Fixed the water leakage issue.",
+                            "Replaced defective wall lights."
+                        ]
+                    }
+                ]
+            },
+            {
+                outlet: "Kalamassery Outlet",
+                icon: "fa-shop",
+                theme: { text: "text-emerald-400", bg: "bg-emerald-500/10 border border-emerald-500/20" },
+                categories: [
+                    {
+                        name: "General Maintenance & Repairs",
+                        icon: "fa-screwdriver-wrench",
+                        tasks: [
+                            "Installed a new borewell motor.",
+                            "Completed borewell motor automation works.",
+                            "Carried out office ceiling maintenance work."
+                        ]
+                    }
+                ]
+            },
+            {
+                outlet: "Kakkanad Outlet",
+                icon: "fa-bolt",
+                theme: { text: "text-orange-400", bg: "bg-orange-500/10 border border-orange-500/20" },
+                categories: [
+                    {
+                        name: "General Maintenance & Repairs",
+                        icon: "fa-screwdriver-wrench",
+                        tasks: [
+                            "Rectified leakage in the sink.",
+                            "Repaired the freezer door hinges."
                         ]
                     }
                 ]
             }
         ];
 
-        const junePlanData = [
+        const julyPlanData = [
             {
-                outlet: "Kalamassery",
+                outlet: "Kalamassery Outlet",
                 icon: "fa-shop",
                 theme: { text: "text-emerald-400", bg: "bg-emerald-500/10 border border-emerald-500/20" },
                 categories: [
@@ -443,44 +322,13 @@
                         name: "Planned Maintenance",
                         icon: "fa-calendar",
                         tasks: [
-                            "Borewell repairing.",
-                            "Leak proofing works.",
-                            "Water supply issue resolution."
+                            "Continue renovation works to enhance the outlet's infrastructure and operational efficiency."
                         ]
                     }
                 ]
             },
             {
-                outlet: "Aluva",
-                icon: "fa-store",
-                theme: { text: "text-blue-400", bg: "bg-blue-500/10 border border-blue-500/20" },
-                categories: [
-                    {
-                        name: "Planned Maintenance",
-                        icon: "fa-calendar",
-                        tasks: [
-                            "Kitchen-side porotta section leak proofing.",
-                            "Parking area gate resetting."
-                        ]
-                    }
-                ]
-            },
-            {
-                outlet: "Edachira",
-                icon: "fa-bolt",
-                theme: { text: "text-orange-400", bg: "bg-orange-500/10 border border-orange-500/20" },
-                categories: [
-                    {
-                        name: "Planned Maintenance",
-                        icon: "fa-calendar",
-                        tasks: [
-                            "Dining area A/C light resetting."
-                        ]
-                    }
-                ]
-            },
-            {
-                outlet: "New Office & Central Kitchen",
+                outlet: "Corporate Projects",
                 icon: "fa-building",
                 theme: { text: "text-purple-400", bg: "bg-purple-500/10 border border-purple-500/20" },
                 categories: [
@@ -488,8 +336,8 @@
                         name: "Site Development",
                         icon: "fa-helmet-safety",
                         tasks: [
-                            "New office construction work started.",
-                            "New central kitchen work started."
+                            "Commence the setup and interior works for the new corporate office.",
+                            "Initiate construction and infrastructure development for the new Central Kitchen facility."
                         ]
                     }
                 ]
@@ -498,46 +346,46 @@
 
         const ksebData = {
             "Aluva": [
-                { "name": "SHOP", "data": { "Mar-26": 138641, "Apr-26": 132268, "May-26": 110982 } },
-                { "name": "OFFICE", "data": { "Dec-25": 17835, "Feb-26": 18578, "Apr-26": 23721 } },
-                { "name": "MANAGERS ROOM", "data": { "Dec-25": 15900, "Feb-26": 27629, "Apr-26": 10976 } },
-                { "name": "HINDI STAFF ROOM", "data": { "Dec-25": 11422, "Feb-26": 9655, "Apr-26": 11571 } },
-                { "name": "MALAYALEE STAFF ROOM", "data": { "Dec-25": 6264, "Feb-26": 6011, "Apr-26": 5476 } },
-                { "name": "LADIES STAFF ROOM", "data": { "Dec-25": 2477, "Feb-26": 2601, "Apr-26": 3614 } }
+                { "name": "SHOP", "data": { "Apr-26": 138641, "May-26": 132268, "Jun-26": 110982 } },
+                { "name": "OFFICE", "data": { "Feb-26": 18578, "Apr-26": 23721, "Jun-26": 23257 } },
+                { "name": "MANAGERS ROOM", "data": { "Feb-26": 27629, "Apr-26": 10976, "Jun-26": 6962 } },
+                { "name": "HINDI STAFF ROOM", "data": { "Feb-26": 9655, "Apr-26": 11571, "Jun-26": 9742 } },
+                { "name": "MALAYALEE STAFF ROOM", "data": { "Feb-26": 6011, "Apr-26": 5476, "Jun-26": 6152 } },
+                { "name": "LADIES STAFF ROOM", "data": { "Feb-26": 2601, "Apr-26": 3614, "Jun-26": 5683 } }
             ],
             "Kalamassery": [
-                { "name": "SHOP", "data": { "Feb-26": 75865, "Mar-26": 80946, "Apr-26": 83240 } },
-                { "name": "SHAWARMA SHOP", "data": { "Dec-25": 582, "Feb-26": 583, "Apr-26": 585 } },
-                { "name": "MALAYALEE STAFF ROOM", "data": { "Oct-25": 2099, "Dec-25": 0, "Feb-26": 0 } },
+                { "name": "SHOP", "data": { "Mar-26": 80946, "Apr-26": 83240, "Jun-26": 72009 } },
+                { "name": "SHAWARMA SHOP", "data": { "Feb-26": 583, "Apr-26": 585, "Jun-26": 583 } },
+                { "name": "MALAYALEE STAFF ROOM", "data": { "Oct-25": 2095, "Dec-25": 0, "Feb-26": 0 } },
                 { "name": "HINDI STAFF ROOM", "data": { "Oct-25": 5676, "Dec-25": 5667, "Feb-26": 6089 } },
-                { "name": "OTHER BUILDING 1", "data": { "Apr-26": 1501 } },
-                { "name": "OTHER BUILDING 2", "data": { "Apr-26": 1778 } },
-                { "name": "OTHER BUILDING 3", "data": { "Apr-26": 1730 } },
-                { "name": "OTHER BUILDING 4", "data": { "Apr-26": 191 } }
+                { "name": "OTHER BUILDING 1", "data": { "Apr-26": 1501, "Jun-26": 2794 } },
+                { "name": "OTHER BUILDING 2", "data": { "Apr-26": 1778, "Jun-26": 3988 } },
+                { "name": "OTHER BUILDING 3", "data": { "Apr-26": 1730, "Jun-26": 2052 } },
+                { "name": "OTHER BUILDING 4", "data": { "Apr-26": 191, "Jun-26": 191 } }
             ],
             "Kakkanad": [
                 { name: "SHOP", data: { "Feb-26": 7146, "Mar-26": 7410, "Apr-26": 6706 } },
-                { name: "STAFF ROOM", data: { "Dec-25": 2637, "Feb-26": 2413, "Apr-26": 1998 } }
+                { name: "STAFF ROOM", data: { "Feb-26": 2413, "Apr-26": 1998, "Jun-26": 2386 } }
             ],
             "Edachira": [
                 { name: "SHOP", data: { "Dec-25": 94583, "Feb-26": 96964, "Apr-26": 88869 } },
-                { name: "STAFF ROOM", data: { "Dec-25": 3541, "Feb-26": 3253, "Apr-26": 3622 } }
+                { name: "STAFF ROOM", data: { "Feb-26": 3253, "Apr-26": 3622, "Jun-26": 3254 } }
             ]
         };
 
         const waterData = {
             "Aluva": [
-                { name: "OFFICE", data: {"Dec-25": 902, "Feb-26": 945, "Apr-26": 831 } },
-                { name: "MANAGERS ROOM", data: {"Dec-25": 147, "Feb-26": 148, "Apr-26": 1040 } },
-                { name: "HINDI STAFF ROOM", data: {"Dec-25": 639, "Feb-26": 639, "Apr-26": 639 } },
-                { name: "MALAYALEE STAFF ROOM", data: {"Dec-25": 11500, "Feb-26": 615, "Apr-26": 1862 } }
+                { name: "OFFICE", data: { "Feb-26": 945, "Apr-26": 831, "Jun-26": 751 } },
+                { name: "MANAGERS ROOM", data: { "Feb-26": 148, "Apr-26": 1040, "Jun-26": 153 } },
+                { name: "HINDI STAFF ROOM", data: { "Feb-26": 639, "Apr-26": 639, "Jun-26": 639 } },
+                { name: "MALAYALEE STAFF ROOM", data: { "Feb-26": 615, "Apr-26": 1862, "Jun-26": 7777 } }
             ],
             "Kalamassery": [
                 { name: "SHOP", data: { "Jan-26": 6754, "Mar-26": 14656, "May-26": 704 } },
                 { name: "HINDI STAFF ROOM", data: { "Nov-25": 2943, "Jan-26": 3101, "Mar-26": 3025 } }
             ],
             "Kakkanad": [
-                { name: "STAFF ROOM", data: { "Dec-25": 2000, "Feb-26": 1600, "Apr-26": 2393 } }
+                { name: "STAFF ROOM", data: { "Feb-26": 1600, "Apr-26": 2393, "Jun-26": 1379 } }
             ],
             "Edachira": [
                 { name: "STAFF ROOM", data: { "Aug-25": 2541, "Oct-25": 2541, "Feb-26": 5862 } }
@@ -573,63 +421,62 @@
             {
                 outlet: "Aluva",
                 completed: [
-                    { date: "10 May 2026", type: "Spray Treatment" },
-                    { date: "20 May 2026", type: "Gel Application" },
-                    { date: "25 May 2026", type: "Extra service for Rat and pests" }
-                ],
-                planned: [
                     { date: "12 June 2026", type: "Gel Application" },
                     { date: "20 June 2026", type: "Spray Treatment" }
+                ],
+                planned: [
+                    { date: "14 August 2026", type: "Gel Application" },
+                    { date: "21 August 2026", type: "Spray Treatment" }
                 ]
             },
             {
                 outlet: "Kalamassery",
                 completed: [
-                    { date: "10 May 2026", type: "Spray Treatment" },
-                    { date: "20 May 2026", type: "Gel Application" },
-                    { date: "25 May 2026", type: "Extra service for Rat and pests" }
-                ],
-                planned: [
                     { date: "12 June 2026", type: "Gel Application" },
                     { date: "20 June 2026", type: "Spray Treatment" }
+                ],
+                planned: [
+                    { date: "14 August 2026", type: "Gel Application" },
+                    { date: "21 August 2026", type: "Spray Treatment" }
                 ]
             },
             {
                 outlet: "Edachira",
                 completed: [
-                    { date: "11 May 2026", type: "Spray Treatment" },
-                    { date: "21 May 2026", type: "Gel Application" },
-                    { date: "25 May 2026", type: "Extra service for Rat and pests" }
-                ],
-                planned: [
                     { date: "13 June 2026", type: "Gel Application" },
                     { date: "21 June 2026", type: "Spray Treatment" }
+                ],
+                planned: [
+                    { date: "15 August 2026", type: "Gel Application" },
+                    { date: "22 August 2026", type: "Spray Treatment" }
                 ]
             },
             {
                 outlet: "Kakkanad",
                 completed: [
-                    { date: "11 May 2026", type: "Spray Treatment" },
-                    { date: "21 May 2026", type: "Gel Application" },
-                    { date: "25 May 2026", type: "Extra service for Rat and pests" }
-                ],
-                planned: [
                     { date: "13 June 2026", type: "Gel Application" },
                     { date: "21 June 2026", type: "Spray Treatment" }
+                ],
+                planned: [
+                    { date: "15 August 2026", type: "Gel Application" },
+                    { date: "22 August 2026", type: "Spray Treatment" }
                 ]
             },
             {
                 outlet: "Scroll",
-                completed: [],
-                planned: [
+                completed: [
                     { date: "13 June 2026", type: "Gel Application" },
                     { date: "21 June 2026", type: "Spray Treatment" }
+                ],
+                planned: [
+                    { date: "15 August 2026", type: "Gel Application" },
+                    { date: "22 August 2026", type: "Spray Treatment" }
                 ]
             }
         ];
 
         const fleetData = [
-            { vehicle: "Ape", expiry: "13 June 2026", icon: "fa-truck-pickup" },
+            { vehicle: "Ape", expiry: "13 June 2027", icon: "fa-truck-pickup" },
             { vehicle: "Thar", expiry: "06 June 2027", icon: "fa-truck-monster" },
             { vehicle: "Activa", expiry: "27 November 2026", icon: "fa-motorcycle" },
             { vehicle: "Ola (Electric)", expiry: "05 October 2028", icon: "fa-bolt" },
@@ -648,6 +495,40 @@
             }
         ];
 
+        const outletVisitData = [
+            {
+                outlet: "Kalamassery",
+                icon: "fa-shop",
+                theme: { text: "text-emerald-400", bg: "bg-emerald-500/10 border-emerald-500/20" },
+                observations: [
+                    "Overall cleanliness requires improvement.",
+                    "Staff grooming standards were not maintained.",
+                    "Condiments/Chutneys were not labeled with preparation date & time.",
+                    "Phone call attendance and response were unsatisfactory."
+                ]
+            },
+            {
+                outlet: "Edachira",
+                icon: "fa-bolt", 
+                theme: { text: "text-orange-400", bg: "bg-orange-500/10 border-orange-500/20" },
+                observations: [
+                    "Condiments/Chutneys were not labeled with preparation date & time.",
+                    "Phone call attendance needs improvement.",
+                    "Kitchen entrance was not cleaned properly.",
+                    "Mandhi rice was found dried, indicating poor holding practices."
+                ]
+            },
+            {
+                outlet: "Aluva",
+                icon: "fa-store",
+                theme: { text: "text-blue-400", bg: "bg-blue-500/10 border-blue-500/20" },
+                observations: [
+                    "Staff guest interaction and customer care require improvement.",
+                    "Phone call attendance and response were below the expected standard."
+                ]
+            }
+        ];
+
         // Store chart instances to manage destruction/re-rendering
         let chartInstances = [];
         let waterChartInstances = [];
@@ -659,16 +540,17 @@
 
         function init() {
             // Render basic tabs on initial load
-            renderMaintenanceCards(maintenanceData, 'maintenance-may-container');
-            renderMaintenanceCards(junePlanData, 'maintenance-june-container');
+            renderMaintenanceCards(maintenanceData, 'maintenance-june-container');
+            renderMaintenanceCards(julyPlanData, 'maintenance-july-container');
             renderPestControl();
             renderCompliance(); 
             renderAdminLogistics();
+            renderOutletVisitReport();
         }
 
         function switchTab(tabId) {
-            const views = ['ops-maint-view', 'new-outlet-view', 'scroll-layout-view', 'central-kitchen-view', 'utilities-view', 'admin-comp-view', 'pest-control-view'];
-            const btns = ['tab-ops-maint', 'tab-new-outlet', 'tab-scroll-layout', 'tab-central-kitchen', 'tab-utilities', 'tab-admin-comp', 'tab-pest-control'];
+            const views = ['ops-maint-view', 'utilities-view', 'admin-comp-view', 'pest-control-view', 'outlet-visit-view'];
+            const btns = ['tab-ops-maint', 'tab-utilities', 'tab-admin-comp', 'tab-pest-control', 'tab-outlet-visit'];
 
             // Hide all views and reset button classes
             views.forEach(id => {
@@ -698,24 +580,24 @@
 
         // Sub-Tab Switcher for Operations & Maintenance
         function switchMaintTab(tab) {
-            const mayContainer = document.getElementById('maintenance-may-container');
             const juneContainer = document.getElementById('maintenance-june-container');
-            const mayBtn = document.getElementById('maint-tab-may');
+            const julyContainer = document.getElementById('maintenance-july-container');
             const juneBtn = document.getElementById('maint-tab-june');
+            const julyBtn = document.getElementById('maint-tab-july');
 
             const activeClass = "px-4 py-1.5 rounded-md text-sm font-bold bg-gradient-to-r from-orange-500 via-pink-500 to-blue-500 text-white shadow-sm whitespace-nowrap";
             const inactiveClass = "px-4 py-1.5 rounded-md text-sm font-medium text-zinc-400 hover:text-white hover:bg-zinc-800 transition-colors whitespace-nowrap";
 
-            if (tab === 'may') {
-                mayContainer.classList.remove('hidden');
-                juneContainer.classList.add('hidden');
-                mayBtn.className = activeClass;
-                juneBtn.className = inactiveClass;
-            } else {
-                mayContainer.classList.add('hidden');
+            if (tab === 'june') {
                 juneContainer.classList.remove('hidden');
-                mayBtn.className = inactiveClass;
+                julyContainer.classList.add('hidden');
                 juneBtn.className = activeClass;
+                julyBtn.className = inactiveClass;
+            } else {
+                juneContainer.classList.add('hidden');
+                julyContainer.classList.remove('hidden');
+                juneBtn.className = inactiveClass;
+                julyBtn.className = activeClass;
             }
         }
 
@@ -786,7 +668,7 @@
                 let completedSection = completedHTML ? `
                     <div class="mb-5">
                         <h4 class="text-xs font-bold text-zinc-500 uppercase tracking-wider mb-3 flex items-center justify-between">
-                            <span>May 2026</span>
+                            <span>Completed Treatments</span>
                             <span class="bg-green-500/10 text-green-400 text-[10px] px-2 py-0.5 rounded border border-green-500/20">Completed</span>
                         </h4>
                         <div class="bg-zinc-900/50 rounded-lg p-3 border border-zinc-800">
@@ -808,7 +690,7 @@
                             ${completedSection}
                             <div>
                                 <h4 class="text-xs font-bold text-zinc-500 uppercase tracking-wider mb-3 flex items-center justify-between">
-                                    <span>June 2026</span>
+                                    <span>August 2026 Plan</span>
                                     <span class="bg-blue-500/10 text-blue-400 text-[10px] px-2 py-0.5 rounded border border-blue-500/20">Plan</span>
                                 </h4>
                                 <div class="bg-zinc-900 rounded-lg p-3 border border-zinc-700 shadow-inner">
@@ -1179,6 +1061,39 @@
                         <p class="text-sm text-zinc-400 leading-relaxed">${update.description}</p>
                     </div>
                 `;
+            });
+        }
+
+        // Render Outlet Visit Report (Dark Theme)
+        function renderOutletVisitReport() {
+            const container = document.getElementById('outlet-visit-container');
+            if(!container) return;
+            container.innerHTML = '';
+
+            outletVisitData.forEach(data => {
+                let obsHTML = data.observations.map(obs => `
+                    <li class="flex items-start text-sm text-zinc-400 mb-3 border-b border-zinc-800/50 pb-3 last:border-0 last:pb-0">
+                        <i class="fa-solid fa-circle-exclamation text-orange-500/80 mt-1 mr-3 flex-shrink-0"></i>
+                        <span class="leading-relaxed">${obs}</span>
+                    </li>
+                `).join('');
+
+                const cardHTML = `
+                    <div class="bg-[#121212] border border-[#27272a] rounded-xl shadow-lg overflow-hidden hover:shadow-pink-500/5 transition-all flex flex-col">
+                        <div class="bg-zinc-900/50 border-b border-zinc-800 px-6 py-4 flex items-center">
+                            <div class="${data.theme.bg} ${data.theme.text} p-2 rounded-lg mr-3 border">
+                                <i class="fa-solid ${data.icon}"></i>
+                            </div>
+                            <h3 class="text-lg font-bold text-white tracking-wide uppercase">${data.outlet}</h3>
+                        </div>
+                        <div class="p-6 flex-grow">
+                            <ul>
+                                ${obsHTML}
+                            </ul>
+                        </div>
+                    </div>
+                `;
+                container.innerHTML += cardHTML;
             });
         }
 
