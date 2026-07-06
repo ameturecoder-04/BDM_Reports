@@ -68,6 +68,9 @@
                     <button onclick="switchTab('outlet-visit')" id="tab-outlet-visit" class="px-4 py-2 rounded-md text-sm font-medium transition-all text-zinc-400 hover:text-white hover:bg-zinc-800 border border-transparent whitespace-nowrap">
                         <i class="fa-solid fa-clipboard-list mr-2"></i>Outlet Visit Report
                     </button>
+                    <button onclick="switchTab('location-hunt')" id="tab-location-hunt" class="px-4 py-2 rounded-md text-sm font-medium transition-all text-zinc-400 hover:text-white hover:bg-zinc-800 border border-transparent whitespace-nowrap">
+                        <i class="fa-solid fa-map-location-dot mr-2"></i>Location Hunt
+                    </button>
                 </div>
             </div>
         </div>
@@ -215,6 +218,21 @@
                 </div>
             </div>
             <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-12" id="outlet-visit-container">
+                <!-- Populated by JS -->
+            </div>
+        </div>
+
+        <!-- ========================================== -->
+        <!-- TAB 6: LOCATION HUNT -->
+        <!-- ========================================== -->
+        <div id="location-hunt-view" class="fade-in hidden">
+            <div class="mb-6 flex justify-between items-end">
+                <div>
+                    <h2 class="text-2xl font-black text-white uppercase tracking-wide">Location Hunt</h2>
+                    <p class="text-sm text-zinc-400 mt-1">Proposed locations for new outlets and finalized locations.</p>
+                </div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12" id="location-hunt-container">
                 <!-- Populated by JS -->
             </div>
         </div>
@@ -529,6 +547,19 @@
             }
         ];
 
+        const locationHuntData = {
+            suggestions: [
+                { location: "Tripunithura", icon: "fa-location-dot" },
+                { location: "Kundannoor", icon: "fa-location-dot" },
+                { location: "Fort Kochi", icon: "fa-location-dot" },
+                { location: "Mattancherry", icon: "fa-location-dot" },
+                { location: "Angamaly", icon: "fa-location-dot" }
+            ],
+            fixed: [
+                { location: "Link Road", icon: "fa-map-pin" }
+            ]
+        };
+
         // Store chart instances to manage destruction/re-rendering
         let chartInstances = [];
         let waterChartInstances = [];
@@ -546,11 +577,12 @@
             renderCompliance(); 
             renderAdminLogistics();
             renderOutletVisitReport();
+            renderLocationHunt();
         }
 
         function switchTab(tabId) {
-            const views = ['ops-maint-view', 'utilities-view', 'admin-comp-view', 'pest-control-view', 'outlet-visit-view'];
-            const btns = ['tab-ops-maint', 'tab-utilities', 'tab-admin-comp', 'tab-pest-control', 'tab-outlet-visit'];
+            const views = ['ops-maint-view', 'utilities-view', 'admin-comp-view', 'pest-control-view', 'outlet-visit-view', 'location-hunt-view'];
+            const btns = ['tab-ops-maint', 'tab-utilities', 'tab-admin-comp', 'tab-pest-control', 'tab-outlet-visit', 'tab-location-hunt'];
 
             // Hide all views and reset button classes
             views.forEach(id => {
@@ -1095,6 +1127,68 @@
                 `;
                 container.innerHTML += cardHTML;
             });
+        }
+
+        // Render Location Hunt Report (Dark Theme)
+        function renderLocationHunt() {
+            const container = document.getElementById('location-hunt-container');
+            if(!container) return;
+            container.innerHTML = '';
+
+            // Render Suggestions
+            let suggestionsHTML = locationHuntData.suggestions.map(item => `
+                <div class="flex items-center p-3 bg-zinc-900/50 border border-zinc-800 rounded-lg mb-3 hover:border-pink-500/30 hover:bg-pink-500/5 transition-all">
+                    <i class="fa-solid ${item.icon} text-pink-500 mr-3 w-5 text-center text-lg"></i>
+                    <span class="text-sm font-semibold text-zinc-300">${item.location}</span>
+                </div>
+            `).join('');
+
+            // Render Fixed
+            let fixedHTML = locationHuntData.fixed.map(item => `
+                <div class="flex items-center p-4 bg-green-500/10 border border-green-500/20 rounded-lg mb-3 shadow-inner shadow-green-500/5">
+                    <i class="fa-solid ${item.icon} text-green-400 mr-3 w-5 text-center text-xl"></i>
+                    <span class="text-base font-bold text-green-400">${item.location}</span>
+                    <span class="ml-auto bg-green-500/20 text-green-400 text-[10px] font-bold px-2.5 py-1 rounded border border-green-500/30 uppercase tracking-widest">
+                        <i class="fa-solid fa-check mr-1"></i>Confirmed
+                    </span>
+                </div>
+            `).join('');
+
+            const cardHTML = `
+                <!-- Suggestions Card -->
+                <div class="bg-[#121212] border border-[#27272a] rounded-xl shadow-lg p-6 hover:shadow-pink-500/5 transition-all">
+                    <div class="flex items-center mb-6 border-b border-zinc-800 pb-4">
+                        <div class="bg-pink-500/10 text-pink-400 p-2.5 rounded-lg mr-4 border border-pink-500/20">
+                            <i class="fa-solid fa-map-location-dot text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-bold text-white uppercase tracking-wider">Suggested Locations</h3>
+                            <p class="text-xs text-zinc-400 mt-0.5">Areas under consideration for new outlets</p>
+                        </div>
+                    </div>
+                    <div>
+                        ${suggestionsHTML}
+                    </div>
+                </div>
+
+                <!-- Fixed Card -->
+                <div class="bg-[#121212] border border-[#27272a] rounded-xl shadow-lg p-6 hover:shadow-green-500/5 transition-all">
+                    <div class="flex items-center mb-6 border-b border-zinc-800 pb-4">
+                        <div class="bg-green-500/10 text-green-400 p-2.5 rounded-lg mr-4 border border-green-500/20">
+                            <i class="fa-solid fa-building-circle-check text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-bold text-white uppercase tracking-wider">Fixed Location</h3>
+                            <p class="text-xs text-zinc-400 mt-0.5">Finalized site for the upcoming outlet</p>
+                        </div>
+                    </div>
+                    <div>
+                        ${fixedHTML}
+                    </div>
+                </div>
+            `;
+            
+            container.innerHTML = cardHTML;
         }
 
         // Initialize App: Fallback check in case DOMContentLoaded has already fired in the Canvas iframe
