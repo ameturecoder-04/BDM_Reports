@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BDM June Report</title>
+    <title>BDM July Report</title>
     
     <!-- External Dependencies: Tailwind, Chart.js, FontAwesome, Google Fonts -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -48,7 +48,7 @@
                         <img src="IMG/PKLOGO.png" onerror="this.onerror=null; this.src='https://placehold.co/150x50/121212/ec4899?text=LOGO'" alt="Company Logo" class="h-14 w-auto object-contain rounded border border-zinc-800">
                     </div>
                     <div class="ml-4">
-                        <h1 class="text-xl md:text-2xl font-black bg-gradient-to-r from-orange-500 via-pink-500 to-blue-500 bg-clip-text text-transparent tracking-tight uppercase">BDM June Report</h1>
+                        <h1 class="text-xl md:text-2xl font-black bg-gradient-to-r from-orange-500 via-pink-500 to-blue-500 bg-clip-text text-transparent tracking-tight uppercase">BDM July Report</h1>
                         <p class="text-[10px] md:text-xs text-zinc-400 font-medium tracking-wider uppercase">Executive Consolidated Dashboard</p>
                     </div>
                 </div>
@@ -91,10 +91,10 @@
                 </div>
                 <div class="flex space-x-2 bg-zinc-900 border border-zinc-800 p-1.5 rounded-lg overflow-x-auto no-scrollbar shadow-inner">
                     <button onclick="switchMaintTab('june')" id="maint-tab-june" class="px-4 py-1.5 rounded-md text-sm font-bold bg-gradient-to-r from-orange-500 via-pink-500 to-blue-500 text-white shadow-sm whitespace-nowrap">
-                        June Report
+                        July Report
                     </button>
                     <button onclick="switchMaintTab('july')" id="maint-tab-july" class="px-4 py-1.5 rounded-md text-sm font-medium text-zinc-400 hover:text-white hover:bg-zinc-800 transition-colors whitespace-nowrap">
-                        July Plan
+                        August Plan
                     </button>
                 </div>
             </div>
@@ -247,84 +247,106 @@
 
         const maintenanceData = [
             {
-                outlet: "Scroll Outlet",
-                icon: "fa-map",
-                theme: { text: "text-yellow-400", bg: "bg-yellow-500/10 border border-yellow-500/20" },
-                categories: [
-                    {
-                        name: "General Maintenance & Repairs",
-                        icon: "fa-screwdriver-wrench",
-                        tasks: [
-                            "Television installation completed."
-                        ]
-                    }
-                ]
-            },
-            {
-                outlet: "Aluva Outlet",
+                outlet: "Aluva Branch",
                 icon: "fa-store",
                 theme: { text: "text-blue-400", bg: "bg-blue-500/10 border border-blue-500/20" },
                 categories: [
                     {
-                        name: "General Maintenance & Repairs",
+                        name: "Kitchen & Equipment Maintenance",
+                        icon: "fa-kitchen-set",
+                        tasks: [
+                            "Completed kitchen wiring for the new masala grinder.",
+                            "Repaired the old masala mixer.",
+                            "Replaced the motor bearing on the Shawaya machine.",
+                            "Refitted the tube light in the Alfaham section.",
+                            "Replaced the floor tiles in the Mandhi section."
+                        ]
+                    },
+                    {
+                        name: "General Facility & Operations",
                         icon: "fa-screwdriver-wrench",
                         tasks: [
-                            "Replaced the 2x2 light guard in the butchery section.",
-                            "Resolved DB (Distribution Board) tripping by removing damaged wiring.",
-                            "Repaired courtyard lighting.",
-                            "Replaced the LED driver for the parking exit signboard and front-side tree lighting.",
-                            "Repaired the Alfaham section track light.",
-                            "Replaced the butchery connection hose.",
-                            "Cleared and rectified the drainage blockage in the glass washing area.",
-                            "Refixed the A/C bathroom closet and replaced the health faucet."
+                            "Repaired the flush in the dom bathroom.",
+                            "Repaired the cash counter table.",
+                            "Completed cleaning of the Manager's Room Electrical Store.",
+                            "Repaired the lift rope drum."
                         ]
                     }
                 ]
             },
             {
-                outlet: "Infopark Outlet",
+                outlet: "Infopark Branch",
                 icon: "fa-building",
                 theme: { text: "text-purple-400", bg: "bg-purple-500/10 border border-purple-500/20" },
                 categories: [
                     {
-                        name: "General Maintenance & Repairs",
-                        icon: "fa-screwdriver-wrench",
+                        name: "Equipment Maintenance",
+                        icon: "fa-gears",
                         tasks: [
-                            "Resolved DB tripping by disconnecting damaged wiring.",
-                            "Completed additional DB tripping rectification works.",
-                            "Fixed the water leakage issue.",
-                            "Replaced defective wall lights."
+                            "Replaced the switch on the Shawarma machine.",
+                            "Changed the wiring for the soft drink cooler."
+                        ]
+                    },
+                    {
+                        name: "Plumbing & Fixtures",
+                        icon: "fa-faucet-drip",
+                        tasks: [
+                            "Replaced the tap in the washing area.",
+                            "Fixed the door hinges on the wash basin counter."
                         ]
                     }
                 ]
             },
             {
-                outlet: "Kalamassery Outlet",
+                outlet: "Kalamassery Branch",
                 icon: "fa-shop",
                 theme: { text: "text-emerald-400", bg: "bg-emerald-500/10 border border-emerald-500/20" },
                 categories: [
                     {
-                        name: "General Maintenance & Repairs",
-                        icon: "fa-screwdriver-wrench",
+                        name: "Electrical Works",
+                        icon: "fa-bolt",
                         tasks: [
-                            "Installed a new borewell motor.",
-                            "Completed borewell motor automation works.",
-                            "Carried out office ceiling maintenance work."
+                            "Repaired the main board light and display board light.",
+                            "Arranged a new electrical connection for the Thawa.",
+                            "Installed 2 new ceiling fans."
+                        ]
+                    },
+                    {
+                        name: "Civil & Plumbing Works",
+                        icon: "fa-hammer",
+                        tasks: [
+                            "Replaced the bathroom health faucet and angle lock/valve.",
+                            "Fixed sheet water leakage.",
+                            "Carried out general renovation work."
                         ]
                     }
                 ]
             },
             {
-                outlet: "Kakkanad Outlet",
-                icon: "fa-bolt",
-                theme: { text: "text-orange-400", bg: "bg-orange-500/10 border border-orange-500/20" },
+                outlet: "Sea Port Branch",
+                icon: "fa-anchor",
+                theme: { text: "text-cyan-400", bg: "bg-cyan-500/10 border border-cyan-500/20" },
                 categories: [
                     {
-                        name: "General Maintenance & Repairs",
-                        icon: "fa-screwdriver-wrench",
+                        name: "Electrical Works",
+                        icon: "fa-bolt",
                         tasks: [
-                            "Rectified leakage in the sink.",
-                            "Repaired the freezer door hinges."
+                            "Repaired the broad light."
+                        ]
+                    }
+                ]
+            },
+            {
+                outlet: "New Office Project",
+                icon: "fa-building",
+                theme: { text: "text-pink-400", bg: "bg-pink-500/10 border border-pink-500/20" },
+                categories: [
+                    {
+                        name: "Site Preparation",
+                        icon: "fa-helmet-safety",
+                        tasks: [
+                            "Removed existing lights and fans.",
+                            "Completed site measurement checking for upcoming works."
                         ]
                     }
                 ]
@@ -333,30 +355,17 @@
 
         const julyPlanData = [
             {
-                outlet: "Kalamassery Outlet",
-                icon: "fa-shop",
-                theme: { text: "text-emerald-400", bg: "bg-emerald-500/10 border border-emerald-500/20" },
-                categories: [
-                    {
-                        name: "Planned Maintenance",
-                        icon: "fa-calendar",
-                        tasks: [
-                            "Continue renovation works to enhance the outlet's infrastructure and operational efficiency."
-                        ]
-                    }
-                ]
-            },
-            {
                 outlet: "Corporate Projects",
                 icon: "fa-building",
                 theme: { text: "text-purple-400", bg: "bg-purple-500/10 border border-purple-500/20" },
                 categories: [
                     {
-                        name: "Site Development",
+                        name: "Upcoming Projects",
                         icon: "fa-helmet-safety",
                         tasks: [
-                            "Commence the setup and interior works for the new corporate office.",
-                            "Initiate construction and infrastructure development for the new Central Kitchen facility."
+                            "New office work",
+                            "New central kitchen work",
+                            "New outlet work"
                         ]
                     }
                 ]
@@ -365,15 +374,15 @@
 
         const ksebData = {
             "Aluva": [
-                { "name": "SHOP", "data": { "Apr-26": 138641, "May-26": 132268, "Jun-26": 110982 } },
+                { "name": "SHOP", "data": { "May-26": 132268, "Jun-26": 110982, "Jul-26": 137136 } },
                 { "name": "OFFICE", "data": { "Feb-26": 18578, "Apr-26": 23721, "Jun-26": 23257 } },
                 { "name": "MANAGERS ROOM", "data": { "Feb-26": 27629, "Apr-26": 10976, "Jun-26": 6962 } },
                 { "name": "HINDI STAFF ROOM", "data": { "Feb-26": 9655, "Apr-26": 11571, "Jun-26": 9742 } },
-                { "name": "MALAYALEE STAFF ROOM", "data": { "Feb-26": 6011, "Apr-26": 5476, "Jun-26": 6152 } },
-                { "name": "LADIES STAFF ROOM", "data": { "Feb-26": 2601, "Apr-26": 3614, "Jun-26": 5683 } }
+                { "name": "MALAYALEE STAFF ROOM", "data": { "Apr-26": 5476, "Jun-26": 6152, "Jul-26": 954 } },
+                { "name": "LADIES STAFF ROOM", "data": { "Apr-26": 3614, "Jun-26": 5683, "Jul-26": 2683 } }
             ],
             "Kalamassery": [
-                { "name": "SHOP", "data": { "Mar-26": 80946, "Apr-26": 83240, "Jun-26": 72009 } },
+                { "name": "SHOP", "data": { "Apr-26": 83240, "Jun-26": 72009, "Jul-26": 73260 } },
                 { "name": "SHAWARMA SHOP", "data": { "Feb-26": 583, "Apr-26": 585, "Jun-26": 583 } },
                 { "name": "MALAYALEE STAFF ROOM", "data": { "Oct-25": 2095, "Dec-25": 0, "Feb-26": 0 } },
                 { "name": "HINDI STAFF ROOM", "data": { "Oct-25": 5676, "Dec-25": 5667, "Feb-26": 6089 } },
@@ -383,7 +392,7 @@
                 { "name": "OTHER BUILDING 4", "data": { "Apr-26": 191, "Jun-26": 191 } }
             ],
             "Kakkanad": [
-                { name: "SHOP", data: { "Feb-26": 7146, "Mar-26": 7410, "Apr-26": 6706 } },
+                { name: "SHOP", data: { "Mar-26": 7410, "Apr-26": 6706, "Jul-26": 5779 } },
                 { name: "STAFF ROOM", data: { "Feb-26": 2413, "Apr-26": 1998, "Jun-26": 2386 } }
             ],
             "Edachira": [
@@ -397,7 +406,7 @@
                 { name: "OFFICE", data: { "Feb-26": 945, "Apr-26": 831, "Jun-26": 751 } },
                 { name: "MANAGERS ROOM", data: { "Feb-26": 148, "Apr-26": 1040, "Jun-26": 153 } },
                 { name: "HINDI STAFF ROOM", data: { "Feb-26": 639, "Apr-26": 639, "Jun-26": 639 } },
-                { name: "MALAYALEE STAFF ROOM", data: { "Feb-26": 615, "Apr-26": 1862, "Jun-26": 7777 } }
+                { name: "MALAYALEE STAFF ROOM", data: { "Apr-26": 1862, "Jun-26": 7777, "Jul-26": 7894 } }
             ],
             "Kalamassery": [
                 { name: "SHOP", data: { "Jan-26": 6754, "Mar-26": 14656, "May-26": 704 } },
@@ -407,6 +416,7 @@
                 { name: "STAFF ROOM", data: { "Feb-26": 1600, "Apr-26": 2393, "Jun-26": 1379 } }
             ],
             "Edachira": [
+                { name: "SHOP", data: { "Feb-26": 96964, "Apr-26": 88869, "Jul-26": 4000 } },
                 { name: "STAFF ROOM", data: { "Aug-25": 2541, "Oct-25": 2541, "Feb-26": 5862 } }
             ]
         };
@@ -433,7 +443,7 @@
             "Edachira": [
                 { type: "Municipal", expiry: "19 March 2030" },
                 { type: "FSSAI", expiry: "07 February 2029" },
-                { type: "Water Test Report", expiry: "03 August 2026" }
+                { type: "Water Test Report", expiry: "13 August 2026" }
             ],
             "Scroll": [
                 { type: "FSSAI", expiry: "05 June 2029" },
@@ -445,56 +455,58 @@
             {
                 outlet: "Aluva",
                 completed: [
-                    { date: "12 June 2026", type: "Gel Application" },
-                    { date: "20 June 2026", type: "Spray Treatment" }
+                    { date: "14 July 2026", type: "Gel Application", location: "Main Outlet" },
+                    { date: "21 July 2026", type: "Spray Treatment", location: "Main Outlet" },
+                    { date: "31 July 2026", type: "Spray Treatment", location: "Malayali Staff Room" }
                 ],
                 planned: [
-                    { date: "14 August 2026", type: "Gel Application" },
-                    { date: "21 August 2026", type: "Spray Treatment" }
+                    { date: "14 August 2026", type: "Gel Application", location: "Main Outlet" },
+                    { date: "21 August 2026", type: "Spray Treatment", location: "Main Outlet" }
                 ]
             },
             {
                 outlet: "Kalamassery",
                 completed: [
-                    { date: "12 June 2026", type: "Gel Application" },
-                    { date: "20 June 2026", type: "Spray Treatment" }
+                    { date: "14 July 2026", type: "Gel Application", location: "Main Outlet" },
+                    { date: "21 July 2026", type: "Spray Treatment", location: "Main Outlet" }
                 ],
                 planned: [
-                    { date: "14 August 2026", type: "Gel Application" },
-                    { date: "21 August 2026", type: "Spray Treatment" }
+                    { date: "14 August 2026", type: "Gel Application", location: "Main Outlet" },
+                    { date: "21 August 2026", type: "Spray Treatment", location: "Main Outlet" }
                 ]
             },
             {
                 outlet: "Edachira",
                 completed: [
-                    { date: "13 June 2026", type: "Gel Application" },
-                    { date: "21 June 2026", type: "Spray Treatment" }
+                    { date: "15 July 2026", type: "Gel Application", location: "Main Outlet" },
+                    { date: "22 July 2026", type: "Spray Treatment", location: "Main Outlet" },
+                    { date: "29 July 2026", type: "Spray Treatment", location: "Staff Room" }
                 ],
                 planned: [
-                    { date: "15 August 2026", type: "Gel Application" },
-                    { date: "22 August 2026", type: "Spray Treatment" }
+                    { date: "15 August 2026", type: "Gel Application", location: "Main Outlet" },
+                    { date: "22 August 2026", type: "Spray Treatment", location: "Main Outlet" }
                 ]
             },
             {
                 outlet: "Kakkanad",
                 completed: [
-                    { date: "13 June 2026", type: "Gel Application" },
-                    { date: "21 June 2026", type: "Spray Treatment" }
+                    { date: "15 July 2026", type: "Gel Application", location: "Main Outlet" },
+                    { date: "22 July 2026", type: "Spray Treatment", location: "Main Outlet" }
                 ],
                 planned: [
-                    { date: "15 August 2026", type: "Gel Application" },
-                    { date: "22 August 2026", type: "Spray Treatment" }
+                    { date: "15 August 2026", type: "Gel Application", location: "Main Outlet" },
+                    { date: "22 August 2026", type: "Spray Treatment", location: "Main Outlet" }
                 ]
             },
             {
                 outlet: "Scroll",
                 completed: [
-                    { date: "13 June 2026", type: "Gel Application" },
-                    { date: "21 June 2026", type: "Spray Treatment" }
+                    { date: "15 July 2026", type: "Gel Application", location: "Main Outlet" },
+                    { date: "22 July 2026", type: "Spray Treatment", location: "Main Outlet" }
                 ],
                 planned: [
-                    { date: "15 August 2026", type: "Gel Application" },
-                    { date: "22 August 2026", type: "Spray Treatment" }
+                    { date: "15 August 2026", type: "Gel Application", location: "Main Outlet" },
+                    { date: "22 August 2026", type: "Spray Treatment", location: "Main Outlet" }
                 ]
             }
         ];
@@ -504,8 +516,7 @@
             { vehicle: "Thar", expiry: "06 June 2027", icon: "fa-truck-monster" },
             { vehicle: "Activa", expiry: "27 November 2026", icon: "fa-motorcycle" },
             { vehicle: "Ola (Electric)", expiry: "05 October 2028", icon: "fa-bolt" },
-            { vehicle: "Intra", expiry: "11 August 2026", icon: "fa-truck" },
-            { vehicle: "Brio", expiry: "08 September 2026", icon: "fa-car" }
+            { vehicle: "Intra", expiry: "11 August 2026", icon: "fa-truck" }
         ];
 
         const adminUpdatesData = [
@@ -521,35 +532,27 @@
 
         const outletVisitData = [
             {
-                outlet: "Kalamassery",
-                icon: "fa-shop",
-                theme: { text: "text-emerald-400", bg: "bg-emerald-500/10 border-emerald-500/20" },
-                observations: [
-                    "Overall cleanliness requires improvement.",
-                    "Staff grooming standards were not maintained.",
-                    "Condiments/Chutneys were not labeled with preparation date & time.",
-                    "Phone call attendance and response were unsatisfactory."
-                ]
-            },
-            {
-                outlet: "Edachira",
-                icon: "fa-bolt", 
-                theme: { text: "text-orange-400", bg: "bg-orange-500/10 border-orange-500/20" },
-                observations: [
-                    "Condiments/Chutneys were not labeled with preparation date & time.",
-                    "Phone call attendance needs improvement.",
-                    "Kitchen entrance was not cleaned properly.",
-                    "Mandhi rice was found dried, indicating poor holding practices."
-                ]
-            },
-            {
-                outlet: "Aluva",
+                outlet: "Aluva Kitchen",
                 icon: "fa-store",
                 theme: { text: "text-blue-400", bg: "bg-blue-500/10 border-blue-500/20" },
                 observations: [
-                    "Staff guest interaction and customer care require improvement.",
-                    "Phone call attendance and response were below the expected standard."
-                ]
+                    "Date Tagging Issues: Date tags were incorrect or missing for mayonnaise and various items stored in the chiller.",
+                    "Staff Hygiene: Overall personal hygiene among the staff is very poor.",
+                    "Personal Grooming: Employees were observed to have unclipped, overgrown nails."
+                ],
+                images: ["IMG/AK1.jpeg", "IMG/AK2.jpeg", "IMG/AK3.jpeg", "IMG/AK4.jpeg"]
+            },
+            {
+                outlet: "Kalamassery Kitchen",
+                icon: "fa-shop",
+                theme: { text: "text-emerald-400", bg: "bg-emerald-500/10 border-emerald-500/20" },
+                observations: [
+                    "Staff Room Hygiene: The staff rooms are well-maintained and kept in a hygienic condition.",
+                    "Kitchen Hygiene: The main kitchen area maintains an acceptable and good standard of hygiene.",
+                    "Staff Hygiene: Personal hygiene among staff members is lacking, specifically regarding improperly washed and maintained clothing/uniforms.",
+                    "Date Tagging Issues: There were instances discovered where date tags were missing or incorrectly labeled on products."
+                ],
+                images: []
             }
         ];
 
@@ -691,15 +694,21 @@
             pestControlData.forEach(outletData => {
                 let completedHTML = outletData.completed.map(item => `
                     <div class="flex justify-between items-center py-2 border-b border-zinc-800 last:border-0">
-                        <span class="text-sm text-zinc-300"><i class="fa-solid fa-check text-green-500 mr-2"></i>${item.type}</span>
-                        <span class="text-xs font-medium text-zinc-400 bg-zinc-800 px-2 py-1 rounded border border-zinc-700">${item.date}</span>
+                        <div class="flex flex-col">
+                            <span class="text-sm text-zinc-300"><i class="fa-solid fa-check text-green-500 mr-2"></i>${item.type}</span>
+                            <span class="text-xs text-zinc-500 mt-0.5 ml-6"><i class="fa-solid fa-location-dot text-zinc-600 mr-1"></i>${item.location}</span>
+                        </div>
+                        <span class="text-xs font-medium text-zinc-400 bg-zinc-800 px-2 py-1 rounded border border-zinc-700 whitespace-nowrap">${item.date}</span>
                     </div>
                 `).join('');
 
                 let plannedHTML = outletData.planned.map(item => `
                     <div class="flex justify-between items-center py-2 border-b border-zinc-800 last:border-0">
-                        <span class="text-sm text-zinc-300"><i class="fa-regular fa-calendar text-blue-400 mr-2"></i>${item.type}</span>
-                        <span class="text-xs font-medium text-blue-300 bg-blue-500/10 px-2 py-1 rounded border border-blue-500/20">${item.date}</span>
+                        <div class="flex flex-col">
+                            <span class="text-sm text-zinc-300"><i class="fa-regular fa-calendar text-blue-400 mr-2"></i>${item.type}</span>
+                            <span class="text-xs text-zinc-500 mt-0.5 ml-6"><i class="fa-solid fa-location-dot text-zinc-600 mr-1"></i>${item.location}</span>
+                        </div>
+                        <span class="text-xs font-medium text-blue-300 bg-blue-500/10 px-2 py-1 rounded border border-blue-500/20 whitespace-nowrap">${item.date}</span>
                     </div>
                 `).join('');
 
@@ -1116,6 +1125,19 @@
                     </li>
                 `).join('');
 
+                let imagesHTML = '';
+                if (data.images && data.images.length > 0) {
+                    imagesHTML = `
+                        <div class="mt-5 pt-5 border-t border-zinc-800">
+                            <div class="grid grid-cols-2 gap-3">
+                                ${data.images.map(img => `
+                                    <img src="${img}" alt="" class="w-full h-32 object-cover rounded-lg border border-zinc-800" loading="lazy">
+                                `).join('')}
+                            </div>
+                        </div>
+                    `;
+                }
+
                 const cardHTML = `
                     <div class="bg-[#121212] border border-[#27272a] rounded-xl shadow-lg overflow-hidden hover:shadow-pink-500/5 transition-all flex flex-col">
                         <div class="bg-zinc-900/50 border-b border-zinc-800 px-6 py-4 flex items-center">
@@ -1128,6 +1150,7 @@
                             <ul>
                                 ${obsHTML}
                             </ul>
+                            ${imagesHTML}
                         </div>
                     </div>
                 `;
