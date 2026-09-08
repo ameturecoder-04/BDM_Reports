@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BDM July Report</title>
+    <title>BDM August Report</title>
     
     <!-- External Dependencies: Tailwind, Chart.js, FontAwesome, Google Fonts -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -48,7 +48,7 @@
                         <img src="IMG/PKLOGO.png" onerror="this.onerror=null; this.src='https://placehold.co/150x50/121212/ec4899?text=LOGO'" alt="Company Logo" class="h-14 w-auto object-contain rounded border border-zinc-800">
                     </div>
                     <div class="ml-4">
-                        <h1 class="text-xl md:text-2xl font-black bg-gradient-to-r from-orange-500 via-pink-500 to-blue-500 bg-clip-text text-transparent tracking-tight uppercase">BDM July Report</h1>
+                        <h1 class="text-xl md:text-2xl font-black bg-gradient-to-r from-orange-500 via-pink-500 to-blue-500 bg-clip-text text-transparent tracking-tight uppercase">BDM August Report</h1>
                         <p class="text-[10px] md:text-xs text-zinc-400 font-medium tracking-wider uppercase">Executive Consolidated Dashboard</p>
                     </div>
                 </div>
@@ -65,9 +65,6 @@
                     </button>
                     <button onclick="switchTab('pest-control')" id="tab-pest-control" class="px-4 py-2 rounded-md text-sm font-medium transition-all text-zinc-400 hover:text-white hover:bg-zinc-800 border border-transparent whitespace-nowrap">
                         <i class="fa-solid fa-bug-slash mr-2"></i>Pest Control
-                    </button>
-                    <button onclick="switchTab('outlet-visit')" id="tab-outlet-visit" class="px-4 py-2 rounded-md text-sm font-medium transition-all text-zinc-400 hover:text-white hover:bg-zinc-800 border border-transparent whitespace-nowrap">
-                        <i class="fa-solid fa-clipboard-list mr-2"></i>Outlet Visit Report
                     </button>
                 </div>
             </div>
@@ -87,22 +84,22 @@
                     <p class="text-sm text-zinc-400 mt-1">Recent resolutions, cost optimizations, and upcoming plans.</p>
                 </div>
                 <div class="flex space-x-2 bg-zinc-900 border border-zinc-800 p-1.5 rounded-lg overflow-x-auto no-scrollbar shadow-inner">
-                    <button onclick="switchMaintTab('june')" id="maint-tab-june" class="px-4 py-1.5 rounded-md text-sm font-bold bg-gradient-to-r from-orange-500 via-pink-500 to-blue-500 text-white shadow-sm whitespace-nowrap">
-                        July Report
+                    <button onclick="switchMaintTab('august')" id="maint-tab-august" class="px-4 py-1.5 rounded-md text-sm font-bold bg-gradient-to-r from-orange-500 via-pink-500 to-blue-500 text-white shadow-sm whitespace-nowrap">
+                        August Report
                     </button>
-                    <button onclick="switchMaintTab('july')" id="maint-tab-july" class="px-4 py-1.5 rounded-md text-sm font-medium text-zinc-400 hover:text-white hover:bg-zinc-800 transition-colors whitespace-nowrap">
-                        August Plan
+                    <button onclick="switchMaintTab('september')" id="maint-tab-september" class="px-4 py-1.5 rounded-md text-sm font-medium text-zinc-400 hover:text-white hover:bg-zinc-800 transition-colors whitespace-nowrap">
+                        September Plan
                     </button>
                 </div>
             </div>
             
-            <!-- Sub-tab Container: June Report -->
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12 fade-in" id="maintenance-june-container">
+            <!-- Sub-tab Container: August Report -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12 fade-in" id="maintenance-august-container">
                 <!-- Populated by JS -->
             </div>
 
-            <!-- Sub-tab Container: July Plan -->
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12 hidden fade-in" id="maintenance-july-container">
+            <!-- Sub-tab Container: September Plan -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12 hidden fade-in" id="maintenance-september-container">
                 <!-- Populated by JS -->
             </div>
         </div>
@@ -205,21 +202,6 @@
             </div>
         </div>
 
-        <!-- ========================================== -->
-        <!-- TAB 5: OUTLET VISIT REPORT -->
-        <!-- ========================================== -->
-        <div id="outlet-visit-view" class="fade-in hidden">
-            <div class="mb-6 flex justify-between items-end">
-                <div>
-                    <h2 class="text-2xl font-black text-white uppercase tracking-wide">Outlet Visit Report</h2>
-                    <p class="text-sm text-zinc-400 mt-1">Key observations and required improvements from recent site evaluations.</p>
-                </div>
-            </div>
-            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-12" id="outlet-visit-container">
-                <!-- Populated by JS -->
-            </div>
-        </div>
-
     </main>
 
     <script>
@@ -227,7 +209,7 @@
         // DATA DEFINITIONS
         // ==========================================
 
-        const maintenanceData = [
+        const augustReportData = [
             {
                 outlet: "Aluva Branch",
                 icon: "fa-store",
@@ -237,27 +219,47 @@
                         name: "Kitchen & Equipment Maintenance",
                         icon: "fa-kitchen-set",
                         tasks: [
-                            "Completed kitchen wiring for the new masala grinder.",
-                            "Repaired the old masala mixer.",
-                            "Replaced the motor bearing on the Shawaya machine.",
-                            "Refitted the tube light in the Alfaham section.",
-                            "Replaced the floor tiles in the Mandhi section."
+                            "Replaced the old floor tiles in the Courtyard Alfaham section with new tiles.",
+                            "Repaired the motor of the Shawaya machine at the Aluva outlet.",
+                            "Repaired the heavy-duty mixer grinder.",
+                            "Repaired the AC unit at the Aluva outlet."
                         ]
                     },
                     {
                         name: "General Facility & Operations",
                         icon: "fa-screwdriver-wrench",
                         tasks: [
-                            "Repaired the flush in the dom bathroom.",
-                            "Repaired the cash counter table.",
-                            "Completed cleaning of the Manager's Room Electrical Store.",
-                            "Repaired the lift rope drum."
+                            "Repaired the lift.",
+                            "Carried out a follow-up lift repair at the Aluva outlet.",
+                            "Repaired the parking board light."
                         ]
                     }
                 ]
             },
             {
-                outlet: "Infopark Branch",
+                outlet: "Edachira Branch",
+                icon: "fa-store",
+                theme: { text: "text-cyan-400", bg: "bg-cyan-500/10 border border-cyan-500/20" },
+                categories: [
+                    {
+                        name: "Plumbing & Fittings",
+                        icon: "fa-faucet-drip",
+                        tasks: [
+                            "Reset the bathroom fittings door (re-aligned and refitted the door of the bathroom fittings area)."
+                        ]
+                    },
+                    {
+                        name: "Electrical Works",
+                        icon: "fa-bolt",
+                        tasks: [
+                            "Repaired the exhaust fan.",
+                            "Repaired the board light."
+                        ]
+                    }
+                ]
+            },
+            {
+                outlet: "Kakkanad Branch",
                 icon: "fa-building",
                 theme: { text: "text-purple-400", bg: "bg-purple-500/10 border border-purple-500/20" },
                 categories: [
@@ -265,16 +267,7 @@
                         name: "Equipment Maintenance",
                         icon: "fa-gears",
                         tasks: [
-                            "Replaced the switch on the Shawarma machine.",
-                            "Changed the wiring for the soft drink cooler."
-                        ]
-                    },
-                    {
-                        name: "Plumbing & Fixtures",
-                        icon: "fa-faucet-drip",
-                        tasks: [
-                            "Replaced the tap in the washing area.",
-                            "Fixed the door hinges on the wash basin counter."
+                            "Repaired the burner of the Shawarma machine."
                         ]
                     }
                 ]
@@ -285,57 +278,17 @@
                 theme: { text: "text-emerald-400", bg: "bg-emerald-500/10 border border-emerald-500/20" },
                 categories: [
                     {
-                        name: "Electrical Works",
-                        icon: "fa-bolt",
+                        name: "Plumbing & Fixtures",
+                        icon: "fa-faucet-drip",
                         tasks: [
-                            "Repaired the main board light and display board light.",
-                            "Arranged a new electrical connection for the Thawa.",
-                            "Installed 2 new ceiling fans."
-                        ]
-                    },
-                    {
-                        name: "Civil & Plumbing Works",
-                        icon: "fa-hammer",
-                        tasks: [
-                            "Replaced the bathroom health faucet and angle lock/valve.",
-                            "Fixed sheet water leakage.",
-                            "Carried out general renovation work."
-                        ]
-                    }
-                ]
-            },
-            {
-                outlet: "Sea Port Branch",
-                icon: "fa-anchor",
-                theme: { text: "text-cyan-400", bg: "bg-cyan-500/10 border border-cyan-500/20" },
-                categories: [
-                    {
-                        name: "Electrical Works",
-                        icon: "fa-bolt",
-                        tasks: [
-                            "Repaired the broad light."
-                        ]
-                    }
-                ]
-            },
-            {
-                outlet: "New Office Project",
-                icon: "fa-building",
-                theme: { text: "text-pink-400", bg: "bg-pink-500/10 border border-pink-500/20" },
-                categories: [
-                    {
-                        name: "Site Preparation",
-                        icon: "fa-helmet-safety",
-                        tasks: [
-                            "Removed existing lights and fans.",
-                            "Completed site measurement checking for upcoming works."
+                            "Repaired the bathroom health faucet."
                         ]
                     }
                 ]
             }
         ];
 
-        const julyPlanData = [
+        const septemberPlanData = [
             {
                 outlet: "Corporate Projects",
                 icon: "fa-building",
@@ -345,9 +298,9 @@
                         name: "Upcoming Projects",
                         icon: "fa-helmet-safety",
                         tasks: [
-                            "New office work",
-                            "New central kitchen work",
-                            "New outlet work"
+                            "Complete the ongoing office work.",
+                            "Complete the LULU work.",
+                            "Start the central kitchen work."
                         ]
                     }
                 ]
@@ -356,30 +309,34 @@
 
         const ksebData = {
             "Aluva": [
-                { "name": "SHOP", "data": { "May-26": 132268, "Jun-26": 110982, "Jul-26": 137136 } },
-                { "name": "OFFICE", "data": { "Feb-26": 18578, "Apr-26": 23721, "Jun-26": 23257 } },
-                { "name": "MANAGERS ROOM", "data": { "Feb-26": 27629, "Apr-26": 10976, "Jun-26": 6962 } },
-                { "name": "HINDI STAFF ROOM", "data": { "Feb-26": 9655, "Apr-26": 11571, "Jun-26": 9742 } },
-                { "name": "MALAYALEE STAFF ROOM", "data": { "Apr-26": 5476, "Jun-26": 6152, "Jul-26": 954 } },
-                { "name": "LADIES STAFF ROOM", "data": { "Apr-26": 3614, "Jun-26": 5683, "Jul-26": 2683 } }
+                { "name": "SHOP", "data": { "Jul-26": 137196, "Aug-26": 127315, "Sep-26": 126868 } },
+                { "name": "OFFICE", "data": { "Apr-26": 23721, "Jun-26": 23257, "Aug-26": 23314 } },
+                { "name": "MANAGERS ROOM", "data": { "Apr-26": 10976, "Jun-26": 6962, "Aug-26": 5554 } },
+                { "name": "HINDI STAFF ROOM", "data": { "Apr-26": 11571, "Jun-26": 9742, "Aug-26": 0 } },
+                { "name": "MALAYALEE STAFF ROOM", "data": { "Jun-26": 6152, "Jul-26": 3454, "Aug-26": 3025 } },
+                { "name": "LADIES STAFF ROOM", "data": { "Apr-26": 3614, "Jun-26": 2683, "Aug-26": 2689 } }
             ],
             "Kalamassery": [
-                { "name": "SHOP", "data": { "Apr-26": 83240, "Jun-26": 72009, "Jul-26": 73260 } },
-                { "name": "SHAWARMA SHOP", "data": { "Feb-26": 583, "Apr-26": 585, "Jun-26": 583 } },
-                { "name": "MALAYALEE STAFF ROOM", "data": { "Oct-25": 2095, "Dec-25": 0, "Feb-26": 0 } },
+                { "name": "SHOP", "data": { "Jun-26": 73260, "Jul-26": 69573, "Aug-26": 77892 } },
+                { "name": "SHAWARMA SHOP", "data": { "Apr-26": 585, "Jun-26": 583, "Aug-26": 788 } },
+                { "name": "MALAYALEE STAFF ROOM", "data": { "Oct-25": 2099, "Dec-25": 0, "Feb-26": 0 } },
                 { "name": "HINDI STAFF ROOM", "data": { "Oct-25": 5676, "Dec-25": 5667, "Feb-26": 6089 } },
-                { "name": "OTHER BUILDING 1", "data": { "Apr-26": 1501, "Jun-26": 2794 } },
-                { "name": "OTHER BUILDING 2", "data": { "Apr-26": 1778, "Jun-26": 3988 } },
-                { "name": "OTHER BUILDING 3", "data": { "Apr-26": 1730, "Jun-26": 2052 } },
-                { "name": "OTHER BUILDING 4", "data": { "Apr-26": 191, "Jun-26": 191 } }
+                { "name": "OTHER BUILDING 1", "data": { "Apr-26": 1501, "Jun-26": 2794, "Aug-26": 2434 } },
+                { "name": "OTHER BUILDING 2", "data": { "Apr-26": 1778, "Jun-26": 3988, "Aug-26": 4167 } },
+                { "name": "OTHER BUILDING 3", "data": { "Apr-26": 1730, "Jun-26": 2052, "Aug-26": 1437 } },
+                { "name": "OTHER BUILDING 4", "data": { "Apr-26": 191, "Jun-26": 191, "Aug-26": 190 } }
             ],
             "Kakkanad": [
-                { name: "SHOP", data: { "Mar-26": 7410, "Apr-26": 6706, "Jul-26": 5779 } },
-                { name: "STAFF ROOM", data: { "Feb-26": 2413, "Apr-26": 1998, "Jun-26": 2386 } }
+                { name: "SHOP", data: { "Jun-26": 5779, "Jul-26": 7799, "Aug-26": 8201 } },
+                { name: "STAFF ROOM", data: { "Jun-26": 2386, "Jul-26": 1770, "Aug-26": 2670 } }
             ],
             "Edachira": [
-                { name: "SHOP", data: { "Dec-25": 94583, "Feb-26": 96964, "Apr-26": 88869 } },
-                { name: "STAFF ROOM", data: { "Feb-26": 3253, "Apr-26": 3622, "Jun-26": 3254 } }
+                { name: "SHOP", data: { "Apr-26": 88869, "Jun-26": 93495, "Aug-26": 194007 } },
+                { name: "STAFF ROOM", data: { "Apr-26": 3622, "Jun-26": 3254, "Aug-26": 7514 } }
+            ],
+            "Scroll": [
+                { name: "SHOP", data: { "Jun-26": 3427, "Aug-26": 18391 } },
+                { name: "STAFF ROOM", data: { "Jun-26": 0 } }
             ]
         };
 
@@ -387,19 +344,18 @@
             "Aluva": [
                 { name: "OFFICE", data: { "Feb-26": 945, "Apr-26": 831, "Jun-26": 751 } },
                 { name: "MANAGERS ROOM", data: { "Feb-26": 148, "Apr-26": 1040, "Jun-26": 153 } },
-                { name: "HINDI STAFF ROOM", data: { "Feb-26": 639, "Apr-26": 639, "Jun-26": 639 } },
-                { name: "MALAYALEE STAFF ROOM", data: { "Apr-26": 1862, "Jun-26": 7777, "Jul-26": 7894 } }
+                { name: "HINDI STAFF ROOM", data: { "Apr-26": 639, "Jun-26": 639, "Aug-26": 10897 } },
+                { name: "MALAYALEE STAFF ROOM", data: { "Apr-26": 1862, "Jun-26": 7894, "Aug-26": 2927 } }
             ],
             "Kalamassery": [
-                { name: "SHOP", data: { "Jan-26": 6754, "Mar-26": 14656, "May-26": 704 } },
+                { name: "SHOP", data: { "Mar-26": 14656, "May-26": 704, "Jul-26": 13159 } },
                 { name: "HINDI STAFF ROOM", data: { "Nov-25": 2943, "Jan-26": 3101, "Mar-26": 3025 } }
             ],
             "Kakkanad": [
-                { name: "STAFF ROOM", data: { "Feb-26": 1600, "Apr-26": 2393, "Jun-26": 1379 } }
+                { name: "STAFF ROOM", data: { "Apr-26": 2393, "Jun-26": 1379, "Aug-26": 1390 } }
             ],
             "Edachira": [
-                { name: "SHOP", data: { "Feb-26": 96964, "Apr-26": 88869, "Jul-26": 4000 } },
-                { name: "STAFF ROOM", data: { "Aug-25": 2541, "Oct-25": 2541, "Feb-26": 5862 } }
+                { name: "STAFF ROOM", data: { "Oct-25": 2541, "Feb-26": 5862, "Aug-26": 8557 } }
             ]
         };
 
@@ -414,7 +370,7 @@
             ],
             "Kakkanad": [
                 { type: "FSSAI", expiry: "02 May 2031" },
-                { type: "Municipal", expiry: "26 May 2026", statusOverride: "Ongoing Issue" },
+                { type: "Municipal", expiry: "27 April 2027" },
                 { type: "Water Test Report", expiry: "26 December 2026" }
             ],
             "Kalamassery": [
@@ -437,58 +393,45 @@
             {
                 outlet: "Aluva",
                 completed: [
-                    { date: "14 July 2026", type: "Gel Application", location: "Main Outlet" },
-                    { date: "21 July 2026", type: "Spray Treatment", location: "Main Outlet" },
-                    { date: "31 July 2026", type: "Spray Treatment", location: "Malayali Staff Room" }
-                ],
-                planned: [
                     { date: "14 August 2026", type: "Gel Application", location: "Main Outlet" },
                     { date: "21 August 2026", type: "Spray Treatment", location: "Main Outlet" }
+                ],
+                planned: [
+                    { date: "09 September 2026", type: "Gel Application", location: "Main Outlet" },
+                    { date: "21 September 2026", type: "Spray Treatment", location: "Main Outlet" }
                 ]
             },
             {
                 outlet: "Kalamassery",
                 completed: [
-                    { date: "14 July 2026", type: "Gel Application", location: "Main Outlet" },
-                    { date: "21 July 2026", type: "Spray Treatment", location: "Main Outlet" }
-                ],
-                planned: [
                     { date: "14 August 2026", type: "Gel Application", location: "Main Outlet" },
                     { date: "21 August 2026", type: "Spray Treatment", location: "Main Outlet" }
+                ],
+                planned: [
+                    { date: "09 September 2026", type: "Gel Application", location: "Main Outlet" },
+                    { date: "21 September 2026", type: "Spray Treatment", location: "Main Outlet" }
                 ]
             },
             {
                 outlet: "Edachira",
                 completed: [
-                    { date: "15 July 2026", type: "Gel Application", location: "Main Outlet" },
-                    { date: "22 July 2026", type: "Spray Treatment", location: "Main Outlet" },
-                    { date: "29 July 2026", type: "Spray Treatment", location: "Staff Room" }
-                ],
-                planned: [
                     { date: "15 August 2026", type: "Gel Application", location: "Main Outlet" },
                     { date: "22 August 2026", type: "Spray Treatment", location: "Main Outlet" }
+                ],
+                planned: [
+                    { date: "10 September 2026", type: "Gel Application", location: "Main Outlet" },
+                    { date: "22 September 2026", type: "Spray Treatment", location: "Main Outlet" }
                 ]
             },
             {
                 outlet: "Kakkanad",
                 completed: [
-                    { date: "15 July 2026", type: "Gel Application", location: "Main Outlet" },
-                    { date: "22 July 2026", type: "Spray Treatment", location: "Main Outlet" }
-                ],
-                planned: [
                     { date: "15 August 2026", type: "Gel Application", location: "Main Outlet" },
                     { date: "22 August 2026", type: "Spray Treatment", location: "Main Outlet" }
-                ]
-            },
-            {
-                outlet: "Scroll",
-                completed: [
-                    { date: "15 July 2026", type: "Gel Application", location: "Main Outlet" },
-                    { date: "22 July 2026", type: "Spray Treatment", location: "Main Outlet" }
                 ],
                 planned: [
-                    { date: "15 August 2026", type: "Gel Application", location: "Main Outlet" },
-                    { date: "22 August 2026", type: "Spray Treatment", location: "Main Outlet" }
+                    { date: "10 September 2026", type: "Gel Application", location: "Main Outlet" },
+                    { date: "22 September 2026", type: "Spray Treatment", location: "Main Outlet" }
                 ]
             }
         ];
@@ -498,7 +441,7 @@
             { vehicle: "Thar", expiry: "06 June 2027", icon: "fa-truck-monster" },
             { vehicle: "Activa", expiry: "27 November 2026", icon: "fa-motorcycle" },
             { vehicle: "Ola (Electric)", expiry: "05 October 2028", icon: "fa-bolt" },
-            { vehicle: "Intra", expiry: "11 August 2026", icon: "fa-truck" }
+            { vehicle: "Intra", expiry: "10 August 2027", icon: "fa-truck" }
         ];
 
         const adminUpdatesData = [
@@ -509,32 +452,6 @@
                 icon: "fa-building-circle-check",
                 color: "green",
                 badgeIcon: "fa-circle-check"
-            }
-        ];
-
-        const outletVisitData = [
-            {
-                outlet: "Aluva Kitchen",
-                icon: "fa-store",
-                theme: { text: "text-blue-400", bg: "bg-blue-500/10 border-blue-500/20" },
-                observations: [
-                    "Date Tagging Issues: Date tags were incorrect or missing for mayonnaise and various items stored in the chiller.",
-                    "Staff Hygiene: Overall personal hygiene among the staff is very poor.",
-                    "Personal Grooming: Employees were observed to have unclipped, overgrown nails."
-                ],
-                images: ["IMG/AK1.jpeg", "IMG/AK2.jpeg", "IMG/AK3.jpeg", "IMG/AK4.jpeg"]
-            },
-            {
-                outlet: "Kalamassery Kitchen",
-                icon: "fa-shop",
-                theme: { text: "text-emerald-400", bg: "bg-emerald-500/10 border-emerald-500/20" },
-                observations: [
-                    "Staff Room Hygiene: The staff rooms are well-maintained and kept in a hygienic condition.",
-                    "Kitchen Hygiene: The main kitchen area maintains an acceptable and good standard of hygiene.",
-                    "Staff Hygiene: Personal hygiene among staff members is lacking, specifically regarding improperly washed and maintained clothing/uniforms.",
-                    "Date Tagging Issues: There were instances discovered where date tags were missing or incorrectly labeled on products."
-                ],
-                images: []
             }
         ];
 
@@ -549,17 +466,16 @@
 
         function init() {
             // Render basic tabs on initial load
-            renderMaintenanceCards(maintenanceData, 'maintenance-june-container');
-            renderMaintenanceCards(julyPlanData, 'maintenance-july-container');
+            renderMaintenanceCards(augustReportData, 'maintenance-august-container');
+            renderMaintenanceCards(septemberPlanData, 'maintenance-september-container');
             renderPestControl();
             renderCompliance(); 
             renderAdminLogistics();
-            renderOutletVisitReport();
         }
 
         function switchTab(tabId) {
-            const views = ['ops-maint-view', 'utilities-view', 'admin-comp-view', 'pest-control-view', 'outlet-visit-view'];
-            const btns = ['tab-ops-maint', 'tab-utilities', 'tab-admin-comp', 'tab-pest-control', 'tab-outlet-visit'];
+            const views = ['ops-maint-view', 'utilities-view', 'admin-comp-view', 'pest-control-view'];
+            const btns = ['tab-ops-maint', 'tab-utilities', 'tab-admin-comp', 'tab-pest-control'];
 
             // Hide all views and reset button classes
             views.forEach(id => {
@@ -589,24 +505,24 @@
 
         // Sub-Tab Switcher for Operations & Maintenance
         function switchMaintTab(tab) {
-            const juneContainer = document.getElementById('maintenance-june-container');
-            const julyContainer = document.getElementById('maintenance-july-container');
-            const juneBtn = document.getElementById('maint-tab-june');
-            const julyBtn = document.getElementById('maint-tab-july');
+            const augustContainer = document.getElementById('maintenance-august-container');
+            const septemberContainer = document.getElementById('maintenance-september-container');
+            const augustBtn = document.getElementById('maint-tab-august');
+            const septemberBtn = document.getElementById('maint-tab-september');
 
             const activeClass = "px-4 py-1.5 rounded-md text-sm font-bold bg-gradient-to-r from-orange-500 via-pink-500 to-blue-500 text-white shadow-sm whitespace-nowrap";
             const inactiveClass = "px-4 py-1.5 rounded-md text-sm font-medium text-zinc-400 hover:text-white hover:bg-zinc-800 transition-colors whitespace-nowrap";
 
-            if (tab === 'june') {
-                juneContainer.classList.remove('hidden');
-                julyContainer.classList.add('hidden');
-                juneBtn.className = activeClass;
-                julyBtn.className = inactiveClass;
+            if (tab === 'august') {
+                augustContainer.classList.remove('hidden');
+                septemberContainer.classList.add('hidden');
+                augustBtn.className = activeClass;
+                septemberBtn.className = inactiveClass;
             } else {
-                juneContainer.classList.add('hidden');
-                julyContainer.classList.remove('hidden');
-                juneBtn.className = inactiveClass;
-                julyBtn.className = activeClass;
+                augustContainer.classList.add('hidden');
+                septemberContainer.classList.remove('hidden');
+                augustBtn.className = inactiveClass;
+                septemberBtn.className = activeClass;
             }
         }
 
@@ -705,7 +621,7 @@
                             ${completedSection}
                             <div>
                                 <h4 class="text-xs font-bold text-zinc-500 uppercase tracking-wider mb-3 flex items-center justify-between">
-                                    <span>August 2026 Plan</span>
+                                    <span>September 2026 Plan</span>
                                     <span class="bg-blue-500/10 text-blue-400 text-[10px] px-2 py-0.5 rounded border border-blue-500/20">Plan</span>
                                 </h4>
                                 <div class="bg-zinc-900 rounded-lg p-3 border border-zinc-700 shadow-inner">
@@ -944,6 +860,15 @@
             }, 0);
         }
 
+        // Parse expiry strings; adds support for "DD-MM-YYYY" dates which the native Date parser cannot handle
+        function parseExpiryDate(str) {
+            const native = new Date(str);
+            if (!isNaN(native.getTime())) return native;
+            const match = str.match(/^(\d{1,2})-(\d{1,2})-(\d{4})$/);
+            if (match) return new Date(+match[3], +match[2] - 1, +match[1]);
+            return native;
+        }
+
         // Render Compliance Report (Dark Theme)
         function renderCompliance() {
             const container = document.getElementById('compliance-container');
@@ -955,7 +880,7 @@
             for (const [outlet, records] of Object.entries(complianceData)) {
                 let recordsHTML = '';
                 records.forEach(record => {
-                    const expiryDate = new Date(record.expiry);
+                    const expiryDate = parseExpiryDate(record.expiry);
                     const diffTime = expiryDate - currentDate;
                     const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
                     
@@ -1076,53 +1001,6 @@
                         <p class="text-sm text-zinc-400 leading-relaxed">${update.description}</p>
                     </div>
                 `;
-            });
-        }
-
-        // Render Outlet Visit Report (Dark Theme)
-        function renderOutletVisitReport() {
-            const container = document.getElementById('outlet-visit-container');
-            if(!container) return;
-            container.innerHTML = '';
-
-            outletVisitData.forEach(data => {
-                let obsHTML = data.observations.map(obs => `
-                    <li class="flex items-start text-sm text-zinc-400 mb-3 border-b border-zinc-800/50 pb-3 last:border-0 last:pb-0">
-                        <i class="fa-solid fa-circle-exclamation text-orange-500/80 mt-1 mr-3 flex-shrink-0"></i>
-                        <span class="leading-relaxed">${obs}</span>
-                    </li>
-                `).join('');
-
-                let imagesHTML = '';
-                if (data.images && data.images.length > 0) {
-                    imagesHTML = `
-                        <div class="mt-5 pt-5 border-t border-zinc-800">
-                            <div class="grid grid-cols-2 gap-3">
-                                ${data.images.map(img => `
-                                    <img src="${img}" alt="" class="w-full h-32 object-cover rounded-lg border border-zinc-800" loading="lazy">
-                                `).join('')}
-                            </div>
-                        </div>
-                    `;
-                }
-
-                const cardHTML = `
-                    <div class="bg-[#121212] border border-[#27272a] rounded-xl shadow-lg overflow-hidden hover:shadow-pink-500/5 transition-all flex flex-col">
-                        <div class="bg-zinc-900/50 border-b border-zinc-800 px-6 py-4 flex items-center">
-                            <div class="${data.theme.bg} ${data.theme.text} p-2 rounded-lg mr-3 border">
-                                <i class="fa-solid ${data.icon}"></i>
-                            </div>
-                            <h3 class="text-lg font-bold text-white tracking-wide uppercase">${data.outlet}</h3>
-                        </div>
-                        <div class="p-6 flex-grow">
-                            <ul>
-                                ${obsHTML}
-                            </ul>
-                            ${imagesHTML}
-                        </div>
-                    </div>
-                `;
-                container.innerHTML += cardHTML;
             });
         }
 
