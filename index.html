@@ -39,40 +39,46 @@
 </head>
 <body class="antialiased selection:bg-pink-500 selection:text-white bg-[#050505] text-[#d4d4d8] font-sans">
 
-    <!-- Top Navigation -->
-    <nav class="bg-black shadow-2xl border-b border-zinc-800 sticky top-0 z-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex flex-col md:flex-row md:justify-between md:items-center h-auto md:h-20 py-2 md:py-0">
-                <div class="flex items-center py-2 shrink-0">
-                    <div class="flex-shrink-0 flex items-center">
-                        <img src="IMG/PKLOGO.png" onerror="this.onerror=null; this.src='https://placehold.co/150x50/121212/ec4899?text=LOGO'" alt="Company Logo" class="h-14 w-auto object-contain rounded border border-zinc-800">
+    <div class="min-h-screen md:flex">
+        <!-- Report navigation -->
+        <aside class="bg-black shadow-2xl border-b border-zinc-800 md:sticky md:top-0 md:h-screen md:w-72 md:shrink-0 md:border-b-0 md:border-r md:border-zinc-800">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 md:px-5 md:h-full">
+                <div class="flex flex-col md:h-full md:py-6">
+                    <div class="flex items-center py-2 md:py-0 md:mb-8 shrink-0">
+                        <div class="flex-shrink-0 flex items-center">
+                            <img src="IMG/PKLOGO.png" onerror="this.onerror=null; this.src='https://placehold.co/150x50/121212/ec4899?text=LOGO'" alt="Company Logo" class="h-14 w-auto object-contain rounded border border-zinc-800">
+                        </div>
+                        <div class="ml-4 min-w-0">
+                            <h1 class="text-lg font-black bg-gradient-to-r from-orange-500 via-pink-500 to-blue-500 bg-clip-text text-transparent tracking-tight uppercase">BDM September Report</h1>
+                            <p class="text-[10px] text-zinc-400 font-medium tracking-wider uppercase">Executive Consolidated Dashboard</p>
+                        </div>
                     </div>
-                    <div class="ml-4">
-                        <h1 class="text-xl md:text-2xl font-black bg-gradient-to-r from-orange-500 via-pink-500 to-blue-500 bg-clip-text text-transparent tracking-tight uppercase">BDM September Report</h1>
-                        <p class="text-[10px] md:text-xs text-zinc-400 font-medium tracking-wider uppercase">Executive Consolidated Dashboard</p>
-                    </div>
-                </div>
-                <!-- Consolidated Tabs (Horizontally scrollable on small screens) -->
-                <div class="flex items-center space-x-2 overflow-x-auto no-scrollbar py-2 w-full md:w-auto">
-                    <button onclick="switchTab('ops-maint')" id="tab-ops-maint" class="px-4 py-2 rounded-md text-sm font-bold transition-all bg-gradient-to-r from-orange-500 via-pink-500 to-blue-500 text-white shadow-lg shadow-pink-500/20 border border-transparent whitespace-nowrap">
-                        <i class="fa-solid fa-screwdriver-wrench mr-2"></i>Operations & Maint.
-                    </button>
-                    <button onclick="switchTab('utilities')" id="tab-utilities" class="px-4 py-2 rounded-md text-sm font-medium transition-all text-zinc-400 hover:text-white hover:bg-zinc-800 border border-transparent whitespace-nowrap">
-                        <i class="fa-solid fa-bolt-lightning mr-2"></i>Utilities Analytics
-                    </button>
-                    <button onclick="switchTab('admin-comp')" id="tab-admin-comp" class="px-4 py-2 rounded-md text-sm font-medium transition-all text-zinc-400 hover:text-white hover:bg-zinc-800 border border-transparent whitespace-nowrap">
-                        <i class="fa-solid fa-file-shield mr-2"></i>Admin & Compliance
-                    </button>
-                    <button onclick="switchTab('pest-control')" id="tab-pest-control" class="px-4 py-2 rounded-md text-sm font-medium transition-all text-zinc-400 hover:text-white hover:bg-zinc-800 border border-transparent whitespace-nowrap">
-                        <i class="fa-solid fa-bug-slash mr-2"></i>Pest Control
-                    </button>
+                    <nav aria-label="Report sections" class="flex items-center gap-2 overflow-x-auto no-scrollbar py-2 md:flex-1 md:flex-col md:items-stretch md:overflow-x-visible md:overflow-y-auto md:py-0 md:pr-1">
+                        <button onclick="switchTab('ops-maint')" id="tab-ops-maint" class="w-max shrink-0 md:w-full flex items-center justify-start px-4 py-3 rounded-lg text-left text-sm font-bold transition-all bg-gradient-to-r from-orange-500 via-pink-500 to-blue-500 text-white shadow-lg shadow-pink-500/20 border border-transparent whitespace-nowrap focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-pink-400 focus-visible:ring-offset-2 focus-visible:ring-offset-black">
+                            <i class="fa-solid fa-screwdriver-wrench mr-3 w-5 text-center"></i>Operations & Maint.
+                        </button>
+                        <button onclick="switchTab('utilities')" id="tab-utilities" class="w-max shrink-0 md:w-full flex items-center justify-start px-4 py-3 rounded-lg text-left text-sm font-medium transition-colors text-zinc-400 hover:text-white hover:bg-zinc-800 border border-transparent whitespace-nowrap focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-pink-400 focus-visible:ring-offset-2 focus-visible:ring-offset-black">
+                            <i class="fa-solid fa-bolt-lightning mr-3 w-5 text-center"></i>Utilities Analytics
+                        </button>
+                        <button onclick="switchTab('admin-comp')" id="tab-admin-comp" class="w-max shrink-0 md:w-full flex items-center justify-start px-4 py-3 rounded-lg text-left text-sm font-medium transition-colors text-zinc-400 hover:text-white hover:bg-zinc-800 border border-transparent whitespace-nowrap focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-pink-400 focus-visible:ring-offset-2 focus-visible:ring-offset-black">
+                            <i class="fa-solid fa-file-shield mr-3 w-5 text-center"></i>Admin & Compliance
+                        </button>
+                        <button onclick="switchTab('pest-control')" id="tab-pest-control" class="w-max shrink-0 md:w-full flex items-center justify-start px-4 py-3 rounded-lg text-left text-sm font-medium transition-colors text-zinc-400 hover:text-white hover:bg-zinc-800 border border-transparent whitespace-nowrap focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-pink-400 focus-visible:ring-offset-2 focus-visible:ring-offset-black">
+                            <i class="fa-solid fa-bug-slash mr-3 w-5 text-center"></i>Pest Control
+                        </button>
+                        <button onclick="switchTab('market-analysis')" id="tab-market-analysis" class="w-max shrink-0 md:w-full flex items-center justify-start px-4 py-3 rounded-lg text-left text-sm font-medium transition-colors text-zinc-400 hover:text-white hover:bg-zinc-800 border border-transparent whitespace-nowrap focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-pink-400 focus-visible:ring-offset-2 focus-visible:ring-offset-black">
+                            <i class="fa-solid fa-chart-line mr-3 w-5 text-center"></i>Market Analysis
+                        </button>
+                        <button onclick="switchTab('biju-naim')" id="tab-biju-naim" class="w-max shrink-0 md:w-full flex items-center justify-start px-4 py-3 rounded-lg text-left text-sm font-medium transition-colors text-zinc-400 hover:text-white hover:bg-zinc-800 border border-transparent whitespace-nowrap focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-pink-400 focus-visible:ring-offset-2 focus-visible:ring-offset-black">
+                            <i class="fa-solid fa-user-group mr-3 w-5 text-center"></i>Biju & Naim
+                        </button>
+                    </nav>
                 </div>
             </div>
-        </div>
-    </nav>
+        </aside>
 
-    <!-- Main Content Area -->
-    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <!-- Main Content Area -->
+        <main class="w-full min-w-0 max-w-7xl px-4 sm:px-6 lg:px-8 py-8 md:mx-auto">
 
         <!-- ========================================== -->
         <!-- TAB 1: OPERATIONS & MAINTENANCE -->
@@ -84,22 +90,22 @@
                     <p class="text-sm text-zinc-400 mt-1">Recent resolutions, cost optimizations, and upcoming plans.</p>
                 </div>
                 <div class="flex space-x-2 bg-zinc-900 border border-zinc-800 p-1.5 rounded-lg overflow-x-auto no-scrollbar shadow-inner">
-                    <button onclick="switchMaintTab('august')" id="maint-tab-august" class="px-4 py-1.5 rounded-md text-sm font-bold bg-gradient-to-r from-orange-500 via-pink-500 to-blue-500 text-white shadow-sm whitespace-nowrap">
-                        August Report
+                    <button onclick="switchMaintTab('september-report')" id="maint-tab-september-report" class="px-4 py-1.5 rounded-md text-sm font-bold bg-gradient-to-r from-orange-500 via-pink-500 to-blue-500 text-white shadow-sm whitespace-nowrap">
+                        September Report
                     </button>
-                    <button onclick="switchMaintTab('september')" id="maint-tab-september" class="px-4 py-1.5 rounded-md text-sm font-medium text-zinc-400 hover:text-white hover:bg-zinc-800 transition-colors whitespace-nowrap">
-                        September Plan
+                    <button onclick="switchMaintTab('october')" id="maint-tab-october" class="px-4 py-1.5 rounded-md text-sm font-medium text-zinc-400 hover:text-white hover:bg-zinc-800 transition-colors whitespace-nowrap">
+                        October Plan
                     </button>
                 </div>
             </div>
             
-            <!-- Sub-tab Container: August Report -->
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12 fade-in" id="maintenance-august-container">
+            <!-- Sub-tab Container: September Report -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12 fade-in" id="maintenance-september-report-container">
                 <!-- Populated by JS -->
             </div>
 
-            <!-- Sub-tab Container: September Plan -->
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12 hidden fade-in" id="maintenance-september-container">
+            <!-- Sub-tab Container: October Plan -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12 hidden fade-in" id="maintenance-october-container">
                 <!-- Populated by JS -->
             </div>
         </div>
@@ -202,14 +208,101 @@
             </div>
         </div>
 
-    </main>
+        <!-- ========================================== -->
+        <!-- TAB 5: COMPETITION & MARKET ANALYSIS -->
+        <!-- ========================================== -->
+        <div id="market-analysis-view" class="fade-in hidden">
+            <div class="mb-6">
+                <h2 class="text-2xl font-black text-white uppercase tracking-wide">Competition & Market Analysis</h2>
+                <p class="text-sm text-zinc-400 mt-1">Competitor activity and customer experience priorities.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+                <section class="bg-[#121212] border border-[#27272a] rounded-xl shadow-lg overflow-hidden" aria-labelledby="market-competitor-updates-title">
+                    <div class="bg-zinc-900/50 border-b border-zinc-800 px-6 py-4 flex items-center">
+                        <div class="bg-blue-500/10 border border-blue-500/20 text-blue-400 p-2 rounded-lg mr-3">
+                            <i class="fa-solid fa-store"></i>
+                        </div>
+                        <h3 id="market-competitor-updates-title" class="text-lg font-bold text-white uppercase tracking-wide">Market Competitor Updates</h3>
+                    </div>
+                    <ul class="p-6 space-y-4">
+                        <li class="flex items-start text-sm text-zinc-300">
+                            <i class="fa-solid fa-circle text-blue-400 text-[8px] mt-1.5 mr-3 flex-shrink-0"></i>
+                            <span>Key active competitors include <strong class="text-white">Altasa, Shawarma Sheea, Kawali, and Sufi.</strong></span>
+                        </li>
+                        <li class="flex items-start text-sm text-zinc-300">
+                            <i class="fa-solid fa-circle text-blue-400 text-[8px] mt-1.5 mr-3 flex-shrink-0"></i>
+                            <span>Sufi has opened a new branch past Companypady with expanded seating capacity, attracting heavy customer footfall.</span>
+                        </li>
+                    </ul>
+                </section>
+
+                <section class="bg-[#121212] border border-[#27272a] rounded-xl shadow-lg overflow-hidden" aria-labelledby="market-analysis-plan-title">
+                    <div class="bg-zinc-900/50 border-b border-zinc-800 px-6 py-4 flex items-center">
+                        <div class="bg-orange-500/10 border border-orange-500/20 text-orange-400 p-2 rounded-lg mr-3">
+                            <i class="fa-solid fa-list-check"></i>
+                        </div>
+                        <h3 id="market-analysis-plan-title" class="text-lg font-bold text-white uppercase tracking-wide">Suggestions</h3>
+                    </div>
+                    <ul class="p-6 space-y-4">
+                        <li class="flex items-start text-sm text-zinc-300">
+                            <i class="fa-solid fa-arrow-right text-orange-400 mt-0.5 mr-3 flex-shrink-0"></i>
+                            <span>Improve dine-in customer service.</span>
+                        </li>
+                        <li class="flex items-start text-sm text-zinc-300">
+                            <i class="fa-solid fa-arrow-right text-orange-400 mt-0.5 mr-3 flex-shrink-0"></i>
+                            <span>Improve parcel and takeaway order accuracy by addressing recurring packaging errors.</span>
+                        </li>
+                        <li class="flex items-start text-sm text-zinc-300">
+                            <i class="fa-solid fa-arrow-right text-orange-400 mt-0.5 mr-3 flex-shrink-0"></i>
+                            <span>Monitor customer feedback on food quality and correct consistency issues.</span>
+                        </li>
+                    </ul>
+                </section>
+            </div>
+        </div>
+
+        <!-- ========================================== -->
+        <!-- TAB 6: BIJU & NAIM -->
+        <!-- ========================================== -->
+        <div id="biju-naim-view" class="fade-in hidden">
+            <div class="mb-6">
+                <h2 class="text-2xl font-black text-white uppercase tracking-wide">Biju & Naim</h2>
+                <p class="text-sm text-zinc-400 mt-1">September attendance updates.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+                <article class="bg-[#121212] border border-[#27272a] rounded-xl shadow-lg overflow-hidden">
+                    <div class="bg-zinc-900/50 border-b border-zinc-800 px-6 py-4 flex items-center">
+                        <div class="bg-blue-500/10 border border-blue-500/20 text-blue-400 p-2 rounded-lg mr-3">
+                            <i class="fa-solid fa-user"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-white uppercase tracking-wide">Biju</h3>
+                    </div>
+                    <p class="p-6 text-sm text-zinc-300 leading-relaxed">Worked on his scheduled day off on 13 September and took leave on 19 September.</p>
+                </article>
+
+                <article class="bg-[#121212] border border-[#27272a] rounded-xl shadow-lg overflow-hidden">
+                    <div class="bg-zinc-900/50 border-b border-zinc-800 px-6 py-4 flex items-center">
+                        <div class="bg-green-500/10 border border-green-500/20 text-green-400 p-2 rounded-lg mr-3">
+                            <i class="fa-solid fa-user-check"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-white uppercase tracking-wide">Naim</h3>
+                    </div>
+                    <p class="p-6 text-sm text-zinc-300 leading-relaxed">Present for all scheduled working days in September.</p>
+                </article>
+            </div>
+        </div>
+
+        </main>
+    </div>
 
     <script>
         // ==========================================
         // DATA DEFINITIONS
         // ==========================================
 
-        const augustReportData = [
+        const septemberReportData = [
             {
                 outlet: "Aluva Branch",
                 icon: "fa-store",
@@ -219,19 +312,16 @@
                         name: "Kitchen & Equipment Maintenance",
                         icon: "fa-kitchen-set",
                         tasks: [
-                            "Replaced the old floor tiles in the Courtyard Alfaham section with new tiles.",
-                            "Repaired the motor of the Shawaya machine at the Aluva outlet.",
-                            "Repaired the heavy-duty mixer grinder.",
-                            "Repaired the AC unit at the Aluva outlet."
+                            "Resolved operational issues with the Shawaya machine.",
+                            "Reset and refitted the gas pipeline connections in the Mandi section."
                         ]
                     },
                     {
-                        name: "General Facility & Operations",
-                        icon: "fa-screwdriver-wrench",
+                        name: "Plumbing & Facility Operations",
+                        icon: "fa-faucet-drip",
                         tasks: [
-                            "Repaired the lift.",
-                            "Carried out a follow-up lift repair at the Aluva outlet.",
-                            "Repaired the parking board light."
+                            "Repaired and serviced the customer hand-wash counter and fixtures.",
+                            "Fixed a water leak in the Hindi staff quarters."
                         ]
                     }
                 ]
@@ -245,62 +335,74 @@
                         name: "Plumbing & Fittings",
                         icon: "fa-faucet-drip",
                         tasks: [
-                            "Reset the bathroom fittings door (re-aligned and refitted the door of the bathroom fittings area)."
+                            "Repaired the toilet seat cover and serviced the flush mechanism."
                         ]
                     },
+                    {
+                        name: "Electrical & Signage Works",
+                        icon: "fa-lightbulb",
+                        tasks: [
+                            "Repaired the front signage light and restored illumination to the main logo board."
+                        ]
+                    }
+                ]
+            },
+            {
+                outlet: "Central Kitchen & Operations",
+                icon: "fa-building",
+                theme: { text: "text-emerald-400", bg: "bg-emerald-500/10 border border-emerald-500/20" },
+                categories: [
                     {
                         name: "Electrical Works",
                         icon: "fa-bolt",
                         tasks: [
-                            "Repaired the exhaust fan.",
-                            "Repaired the board light."
+                            "Reset and repaired the fan in the Production Manager's room."
                         ]
                     }
                 ]
             },
-            {
-                outlet: "Kakkanad Branch",
-                icon: "fa-building",
-                theme: { text: "text-purple-400", bg: "bg-purple-500/10 border border-purple-500/20" },
-                categories: [
-                    {
-                        name: "Equipment Maintenance",
-                        icon: "fa-gears",
-                        tasks: [
-                            "Repaired the burner of the Shawarma machine."
-                        ]
-                    }
-                ]
-            },
-            {
-                outlet: "Kalamassery Branch",
-                icon: "fa-shop",
-                theme: { text: "text-emerald-400", bg: "bg-emerald-500/10 border border-emerald-500/20" },
-                categories: [
-                    {
-                        name: "Plumbing & Fixtures",
-                        icon: "fa-faucet-drip",
-                        tasks: [
-                            "Repaired the bathroom health faucet."
-                        ]
-                    }
-                ]
-            }
-        ];
-
-        const septemberPlanData = [
             {
                 outlet: "Corporate Projects",
                 icon: "fa-building",
                 theme: { text: "text-purple-400", bg: "bg-purple-500/10 border border-purple-500/20" },
                 categories: [
                     {
-                        name: "Upcoming Projects",
+                        name: "Project Milestones",
                         icon: "fa-helmet-safety",
                         tasks: [
-                            "Complete the ongoing office work.",
-                            "Complete the LULU work.",
-                            "Start the central kitchen work."
+                            "Completed the Lulu project work for September."
+                        ]
+                    }
+                ]
+            }
+        ];
+
+        const octoberPlanData = [
+            {
+                outlet: "Corporate Projects",
+                icon: "fa-building",
+                theme: { text: "text-purple-400", bg: "bg-purple-500/10 border border-purple-500/20" },
+                categories: [
+                    {
+                        name: "Office Setup & Completion",
+                        icon: "fa-briefcase",
+                        tasks: [
+                            "Begin setting up a room in the old office.",
+                            "Complete the remaining work at the new office."
+                        ]
+                    },
+                    {
+                        name: "Central Kitchen",
+                        icon: "fa-kitchen-set",
+                        tasks: [
+                            "Begin work on the Central Kitchen."
+                        ]
+                    },
+                    {
+                        name: "Outlet Maintenance",
+                        icon: "fa-screwdriver-wrench",
+                        tasks: [
+                            "Complete pending maintenance work across all outlets."
                         ]
                     }
                 ]
@@ -452,16 +554,18 @@
 
         function init() {
             // Render basic tabs on initial load
-            renderMaintenanceCards(augustReportData, 'maintenance-august-container');
-            renderMaintenanceCards(septemberPlanData, 'maintenance-september-container');
+            renderMaintenanceCards(septemberReportData, 'maintenance-september-report-container');
+            renderMaintenanceCards(octoberPlanData, 'maintenance-october-container');
             renderPestControl();
             renderCompliance(); 
             renderAdminLogistics();
         }
 
         function switchTab(tabId) {
-            const views = ['ops-maint-view', 'utilities-view', 'admin-comp-view', 'pest-control-view'];
-            const btns = ['tab-ops-maint', 'tab-utilities', 'tab-admin-comp', 'tab-pest-control'];
+            const views = ['ops-maint-view', 'utilities-view', 'admin-comp-view', 'pest-control-view', 'market-analysis-view', 'biju-naim-view'];
+            const btns = ['tab-ops-maint', 'tab-utilities', 'tab-admin-comp', 'tab-pest-control', 'tab-market-analysis', 'tab-biju-naim'];
+            const activeClass = "w-max shrink-0 md:w-full flex items-center justify-start px-4 py-3 rounded-lg text-left text-sm font-bold transition-all bg-gradient-to-r from-orange-500 via-pink-500 to-blue-500 text-white shadow-lg shadow-pink-500/20 border border-transparent whitespace-nowrap focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-pink-400 focus-visible:ring-offset-2 focus-visible:ring-offset-black";
+            const inactiveClass = "w-max shrink-0 md:w-full flex items-center justify-start px-4 py-3 rounded-lg text-left text-sm font-medium transition-colors text-zinc-400 hover:text-white hover:bg-zinc-800 border border-transparent whitespace-nowrap focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-pink-400 focus-visible:ring-offset-2 focus-visible:ring-offset-black";
 
             // Hide all views and reset button classes
             views.forEach(id => {
@@ -470,7 +574,7 @@
             });
             btns.forEach(id => {
                 const el = document.getElementById(id);
-                if (el) el.className = "px-4 py-2 rounded-md text-sm font-medium transition-all text-zinc-400 hover:text-white hover:bg-zinc-800 border border-transparent whitespace-nowrap";
+                if (el) el.className = inactiveClass;
             });
 
             // Show active view and highlight active button
@@ -478,7 +582,7 @@
             const activeBtn = document.getElementById('tab-' + tabId);
             
             if (activeView) activeView.classList.remove('hidden');
-            if (activeBtn) activeBtn.className = "px-4 py-2 rounded-md text-sm font-bold transition-all bg-gradient-to-r from-orange-500 via-pink-500 to-blue-500 text-white shadow-lg shadow-pink-500/20 border border-transparent whitespace-nowrap";
+            if (activeBtn) activeBtn.className = activeClass;
 
             // Lazy load charts to prevent 0x0 rendering issues on hidden tabs
             if (tabId === 'utilities' && !utilitiesInitialized) {
@@ -491,24 +595,24 @@
 
         // Sub-Tab Switcher for Operations & Maintenance
         function switchMaintTab(tab) {
-            const augustContainer = document.getElementById('maintenance-august-container');
-            const septemberContainer = document.getElementById('maintenance-september-container');
-            const augustBtn = document.getElementById('maint-tab-august');
-            const septemberBtn = document.getElementById('maint-tab-september');
+            const reportContainer = document.getElementById('maintenance-september-report-container');
+            const planContainer = document.getElementById('maintenance-october-container');
+            const reportBtn = document.getElementById('maint-tab-september-report');
+            const planBtn = document.getElementById('maint-tab-october');
 
             const activeClass = "px-4 py-1.5 rounded-md text-sm font-bold bg-gradient-to-r from-orange-500 via-pink-500 to-blue-500 text-white shadow-sm whitespace-nowrap";
             const inactiveClass = "px-4 py-1.5 rounded-md text-sm font-medium text-zinc-400 hover:text-white hover:bg-zinc-800 transition-colors whitespace-nowrap";
 
-            if (tab === 'august') {
-                augustContainer.classList.remove('hidden');
-                septemberContainer.classList.add('hidden');
-                augustBtn.className = activeClass;
-                septemberBtn.className = inactiveClass;
+            if (tab === 'september-report') {
+                reportContainer.classList.remove('hidden');
+                planContainer.classList.add('hidden');
+                reportBtn.className = activeClass;
+                planBtn.className = inactiveClass;
             } else {
-                augustContainer.classList.add('hidden');
-                septemberContainer.classList.remove('hidden');
-                augustBtn.className = inactiveClass;
-                septemberBtn.className = activeClass;
+                reportContainer.classList.add('hidden');
+                planContainer.classList.remove('hidden');
+                reportBtn.className = inactiveClass;
+                planBtn.className = activeClass;
             }
         }
 
